@@ -56,7 +56,9 @@
 			top: 0;
 			right: 16px;
 			z-index: 3;
-
+			-webkit-animation: move-navbar-down 1 2s ease-in-out;
+			-o-animation: move-navbar-down 1 2s ease-in-out;
+			animation: move-navbar-down 1 2s ease-in-out;
 		}
 		.navigation-links {
 			font-family: "IBM Plex Mono", monospace;
@@ -66,6 +68,10 @@
 		  	overflow: hidden;
 		  	background-color: white;
 		  	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		  	position: fixed;
+		  	top: 0;
+		  	right: 0;
+
 		}
 		.navigation-links li {
 			float: left;
@@ -182,6 +188,8 @@
 			height: 50px;
 			max-width: 100%; /* Avoids overfilling parent container when animation start */
 			background: #00623a;
+			-webkit-animation: example 1 2s ease-in-out;
+			-o-animation: example 1 2s ease-in-out;
 			animation: example 1 2s ease-in-out;
 		}
 
@@ -221,6 +229,20 @@
 		  	height: 50px;
 		  	z-index: 0;
 		  }
+		}
+
+		@keyframes move-navbar-down {
+			0% {
+			    opacity: 0;
+			    transform: translateY(-3rem);
+			  }
+			  99% {
+			  	opacity: 0;
+			  }
+			  100% {
+			    opacity: 1;
+			    transform: translateY(0);
+			  }
 		}
 
 		@media only screen and (max-width: 767px) {
