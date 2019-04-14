@@ -105,6 +105,9 @@
 			margin: 0 auto 30px;
 			text-align: left;
 			padding: 0 15px;
+			position: relative;
+			z-index: 1;
+			background-color: white;
 		}
 		main {
 			margin-top: 75px;
@@ -177,7 +180,6 @@
 
 		span.test, span.test-opp, .test-opp-global-bottom  {
 			position: absolute;
-			z-index: 0;
 			display: inline-block;
 			width: 50px;
 			height: 50px;
@@ -200,6 +202,7 @@
 		span.test-opp-global-bottom {
 			bottom: 15px; /* on account of margin-bottom of 60px on h1 */
 			right: 0px;
+			z-index: 3;
 		}
 
 
@@ -228,14 +231,21 @@
 				display: none;
 			}
 		}
-		@media only screen and (min-height: 1200px) {
+		@media only screen and (min-width: 1200px) {
 			main {
+				position: relative;
+				top: -300px; /* Height of portrait image at this size */
 				max-width: none;
+				display: inline-block;
+				width: 50%;
 			}
+			header
 			.img-responsive.portrait-image {
-				position: absolute;
-				top: -45px;
-				left: -60px;
+				position: relative;
+			    left: -300px;
+			    top: 300px;
+			    z-index: 0;
+
 			}
 		}
 
