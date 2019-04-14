@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio &mdash; John Jordan</title>
-	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:600|IBM+Plex+Sans:300,300i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,600|IBM+Plex+Sans:300,300i" rel="stylesheet">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 	<style>
 		* {
@@ -54,10 +54,42 @@
 			background-attachment: fixed;
 
 		}
+		nav {
+			position: fixed;
+			top: 0;
+			right: 16px;
+			z-index: 3;
+
+		}
+		.navigation-links {
+			font-family: "IBM Plex Mono", monospace;
+		  	list-style-type: none;
+		  	margin: 0;
+		  	padding: 0;
+		  	overflow: hidden;
+		  	background-color: white;
+		  	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		}
+		.navigation-links li {
+			float: left;
+			margin: 0 8px;
+		}
+		.navigation-links li a {
+			font-weight: 300;
+		  	display: block;
+		  	padding: 8px;
+		  	text-decoration: none;
+		  	color: #AB1EA5;
+		}
+		.navigation-links li.active a {
+			color: #60005C;
+			font-weight: 600;
+		}
 		.img-responsive {
 			display: block;
 			max-width: 100%;
 			height: auto;
+			margin-bottom: 30px;
 		}
 		.main-container {
 		 min-height: 100vh; /* will cover the 100% of viewport */
@@ -151,7 +183,7 @@
 			height: 50px;
 			max-width: 100%; /* Avoids overfilling parent container when animation start */
 			background: #00623a;
-			animation: example 1 1s ease-in-out;
+			animation: example 1 2s ease-in-out;
 		}
 
 		span.test {
@@ -176,7 +208,7 @@
 		  	max-width: none;
 		  	width: 100%;
 		  	height: 10000%;
-		  	z-index: 3;
+		  	z-index: 10;
 		  }
 		  90% {
 		  	z-index: 3;
@@ -196,6 +228,16 @@
 				display: none;
 			}
 		}
+		@media only screen and (min-height: 1200px) {
+			main {
+				max-width: none;
+			}
+			.img-responsive.portrait-image {
+				position: absolute;
+				top: -45px;
+				left: -60px;
+			}
+		}
 
 	</style>
 </head>
@@ -204,16 +246,16 @@
 	<span class="test-opp-global-bottom"></span>
 	<div class="main-container">
 		<nav>
-
+			<ul class="navigation-links">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Projects</a></li>
+			</ul>
 		</nav>
 		<main>
 			<header>
-				<figure>
-					<img class="img-responsive" src="img/portrait-gradient.jpg" alt="Portrait of John Jordan with green gradient applied.">
-					<figcaption>
 
-					</figcaption>
-				</figure>
+				<img class="img-responsive portrait-image" src="img/portrait-gradient.jpg" alt="Portrait of John Jordan with green gradient applied.">
+
 				<div class="position-relative">
 					<span class="test"></span>
 					<h1>
