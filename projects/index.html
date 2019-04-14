@@ -57,6 +57,7 @@
 
 		}
 		nav {
+			opacity: 0;
 			position: fixed;
 			top: 0;
 			left: 16px;
@@ -64,6 +65,7 @@
 			-webkit-animation: move-navbar-left 1 1s ease-in-out;
 			-o-animation: move-navbar-left 1 1s ease-in-out;
 			animation: move-navbar-left 1 1s ease-in-out;
+			opacity: 1; /* Used to mask movement from left to right hand side */
 
 		}
 		.navigation-links {
@@ -236,16 +238,22 @@
 
 		@keyframes move-navbar-left {
 			0% {
-			  transform: translateX(75%);
-			  margin-left: 75%;
+				opacity: 0;
+				right: 0;
+			}
+			5% {
+				transform: translateX(90%);
+			}
+			30% {
+				opacity: 1;
+
 			}
 			90% {
 				transform: translateX(-10%);
 			}
 
 			100% {
-			  transform: translateX(0);
-			  margin-left: 0%;
+				left: 16px; /* original value */
 			}
 		}
 
