@@ -96,6 +96,7 @@
 		 display: block;
 		 position: relative;
 		 padding-bottom: 155px; /* height of your footer */
+
 		}
 
 		main, header, section {
@@ -112,8 +113,6 @@
 			margin-top: 75px;
 			height: 100%;
 			background-color: white;
-		 	animation: move-main-left;
-
 		}
 		header {
 			margin: 45px auto;
@@ -126,6 +125,11 @@
 			margin: 0;
 			max-width: 700px;
 
+		}
+		section {
+			-webkit-animation: expand-main-content 1 2s ease-in-out;
+			-o-animation: expand-main-content 1 2s ease-in-out;
+			animation: expand-main-content 1 2s ease-in-out;
 		}
 
 		figure {
@@ -217,45 +221,27 @@
 		}
 
 		@keyframes move-navbar-left {
-			/*0% {
-				margin-left: 90%;
-				width: 100%;
-			}
-			50% {
-				width: 90%;
-			}
-			90% {
-				width: 75%;
-				min-height: 100%
-
-			}
-			97.4% {
-				width: 50%;
-			}
-			99% {
-				width: auto;
-			}
-			100% {
-				margin-left: 0%;
-			}*/
 			0% {
-			  transform: translateX(100%);
+			  transform: translateX(60%);
+			  margin-left: 60%;
 			}
 
 			100% {
 			  transform: translateX(0);
+			  margin-left: 0%;
+			  margin-left: 0%;
 			}
 		}
 
-		@keyframes move-main-left {
-			0% {
-				right: -50px;
+		@keyframes expand-main-content {
+			from {
+				opacity: 0;
 			}
-
-			100% {
-				right: 50px;
+			to {
+				opacity: 1;
 			}
 		}
+
 
 
 		@media only screen and (max-width: 767px) {
