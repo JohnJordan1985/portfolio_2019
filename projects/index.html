@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projects &mdash; John Jordan</title>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,600" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+	<style>
+		* {
+		 box-sizing: border-box;
+		 /* border: solid 1px gray; */
+		}
+		*:before,
+		*:after {
+		 box-sizing: border-box;
+		}
+		html,
+		body {
+		 height: 100%;
+		 min-height: 100%;
+		 height: auto;
+		 position: relative;
+		 /* Baseline grind vertical rhytmn based on multiples of 15px margin: 60px 0 0; */
+		 margin: 0;
+		 padding: 0;
+		 font-family: "IBM Plex Mono", monospace;
+		 font-weight: 300;
+		 color: rgb(60,60,60);
+		 text-align: center;
+		}
+		/* Classical typographical scale: 9	10	11	12	14	16	18	21	24	30	36	48	60	72 */
+		h1 {
+			font-weight: 600;
+			color: #00492C;
+			margin-top: 0;
+			font-size: 36px ;
+			line-height: 48px;
+			padding: 0 12px;
+		}
+		em {
+			font-style: italic;
+		}
+		.font-shamrock-green {
+			color: #009e60;
+		}
+		.background-image-square {
+			background-image: url(http://johnjordan.design/img/background_body.png);
+			background-repeat: repeat;
+			background-attachment: fixed;
+
+		}
+		nav {
+			position: fixed;
+			top: 0;
+			left: 16px;
+			z-index: 3;
+			animation: move-navbar-left 1 2s ease-in-out;
+
+		}
+		.navigation-links {
+			position: relative;
+			font-family: "IBM Plex Mono", monospace;
+		  	list-style-type: none;
+		  	margin: 0;
+		  	padding: 0;
+		  	overflow: hidden;
+		  	background-color: white;
+		  	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+		}
+		.navigation-links li {
+			float: left;
+			margin: 0 8px;
+		}
+		.navigation-links li a {
+			font-weight: 300;
+		  	display: block;
+		  	padding: 5px; /* keeps in line with 50x50 square */
+		  	text-decoration: none;
+		  	color: #AB1EA5;
+		}
+		.navigation-links li.active a {
+			color: #60005C;
+			font-weight: 600;
+		}
+		.img-responsive {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 30px;
+		}
+		.main-container {
+		 min-height: 100vh; /* will cover the 100% of viewport */
+		 overflow: hidden;
+		 display: block;
+		 position: relative;
+		 padding-bottom: 155px; /* height of your footer */
+		}
+
+		main, header, section {
+			display: inline-block;
+			max-width: 790px;
+			margin: 0 auto 30px;
+			text-align: left;
+			padding: 0 15px;
+			position: relative;
+			z-index: 1;
+			background-color: white;
+		}
+		main {
+			margin-top: 75px;
+			height: 100%;
+			background-color: white;
+		}
+		header {
+			margin: 45px auto;
+
+		}
+		header h1 {
+			position: relative;
+			background-color: white;
+			z-index: 2;
+			margin: 0;
+			max-width: 700px;
+
+		}
+
+		figure {
+			margin: 0 0 30px;
+		}
+		small {
+			font-size: 12px;
+		}
+
+		footer {
+			position: absolute;
+		 	bottom: 0;
+		 	width: 100%;
+		 	background-color: white;
+		}
+		.social-icon-wrapper {
+			display: inline-block;
+			width: 20%;
+		}
+		.social-icons {
+			font-size: 30px;
+			line-height: 48px;
+			display: inline-block;
+			margin: 30px auto;
+			text-decoration: none;
+			color: #00492C;
+		}
+
+		.social-icons:hover, .social-icons:active, .social-icons:visited {
+			color: #80CFB0;
+		}
+
+		p, ul, ol {
+			font-size: 21px;
+			line-height: 30px;
+			margin: 0 0 30px;
+		}
+		ol {
+			list-style-type: disc;
+		}
+
+
+		ol > li:before {
+			font-weight: 700;
+		}
+		.indented-by-16px {
+			padding-left: 32px;
+		}
+
+		.position-relative {
+			position: relative;
+		}
+
+		span.test, span.test-opp, .test-opp-global-bottom  {
+			position: absolute;
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			max-width: 100%; /* Avoids overfilling parent container when animation start */
+			background: #00623a;
+			animation: example 1 1s ease-in-out;
+		}
+
+		span.test {
+			top: -10px;
+			left: -15px; /* on account of padding horizontal of 15px */
+		}
+
+		span.test-opp {
+			bottom: -10px; /* on account of margin-bottom of 60px on h1 */
+			right: -15px;
+		}
+
+
+
+		@keyframes example {
+		  0% {
+		  	width: 100%;
+		  	height: 100%;
+		  	z-index: 10;
+		  }
+
+		  99%{
+		  	z-index: 10;
+		  }
+		  100% {
+		  	width: 50px;
+		  	height: 50px;
+		  	z-index: 1;
+		  }
+		}
+
+		@keyframes move-navbar-left {
+			0% {
+				margin-left: 100%;
+				width: 100%;
+			}
+			50% {
+				width: 75%;
+			}
+			100% {
+				margin-left: 0%;
+				width: auto;
+			}
+		}
+
+
+		@media only screen and (max-width: 767px) {
+			.hidden-xs {
+				display: none;
+			}
+		}
+		@media only screen and (min-width: 1200px) {
+			main {
+				position: relative;
+				top: -300px; /* Height of portrait image at this size */
+				max-width: none;
+				display: inline-block;
+				width: 50%;
+			}
+			header
+			.img-responsive.portrait-image {
+				position: relative;
+			    left: -300px;
+			    top: 300px;
+			    z-index: 0;
+
+			}
+		}
+
+	</style>
+</head>
+<body class="background-image-square">
+	<div class="main-container">
+		<nav>
+			<ul class="navigation-links">
+				<li><a href="../index.html">Home</a></li>
+				<li class="active"><a href="#">Projects</a></li>
+			</ul>
+		</nav>
+		<main>
+			<header>
+				<div class="position-relative">
+					<span class="test"></span>
+					<h1>
+						Recent projects
+					</h1>
+					<span class="test-opp"></span>
+				</div>
+
+			</header>
+			<section>
+				<p>
+					I&apos;m a hybrid designer/developer, with a pharmacy and life sciences background, and this portfolio shows the work that:
+					<ol class="indented-by-16px">
+						<li>best displays my range of skills, and</li>
+						<li>represents the work that I <em>want to be doing</em>.</li>
+					</ol>
+				</p>
+				<p>
+					I&apos;m based in the Bay Area, writing HTML, CSS and JS on a daily basis, as well as creating content with Photoshop and Illustrator.
+				</p>
+				<p>
+				</p>
+
+			</section>
+		</main>
+		<footer>
+			<hr />
+			<div class="social-icon-wrapper">
+				<a class="social-icons" href="https://www.linkedin.com/in/johnjordan-design/" target="_blank" title="View my LinkedIn account. (Opens in a new window.)"><span class="fab fa-linkedin-in"></span></a>
+			</div>
+			<div class="social-icon-wrapper">
+				<a class="social-icons" href="https://medium.com/@johnjordan1985" target="_blank" title="View my Medium blog. (Opens in a new window.)"><span class="fab fa-medium-m"></span></a>
+			</div>
+			<div class="social-icon-wrapper">
+				<a class="social-icons" href="https://github.com/JohnJordan1985" target="_blank" title="View my GitHub account. (Opens in a new window.)"><span class="fab fa-github"></span></a>
+			</div>
+			<div class="social-icon-wrapper">
+				<a class="social-icons" href="mailto:john@reduct.co.uk" target="_blank" title="Email me at: john@reduct.co.uk"><span class="fas fa-envelope"></span></a>
+
+			</div>
+			<p>
+				<small>copyright - 2019 - John Jordan</small>
+			</p>
+		</footer>
+	</div>
+
+</body>
+</html>
