@@ -192,6 +192,7 @@
 			width: 50px;
 			height: 50px;
 			max-width: 100%; /* Avoids overfilling parent container when animation start */
+			max-height: 100%;
 			background: #00623a;
 			-webkit-animation: example 1 1s ease-in-out;
 			-o-animation: example 1 1s ease-in-out;
@@ -217,8 +218,8 @@
 
 		  90%{
 		  	z-index: 10;
-		  	width: 35px;
-		  	height: 35px;
+		  	width: 30px;
+		  	height: 30px;
 		  }
 		  100% {
 		  	width: 50px;
@@ -241,7 +242,7 @@
 
 		@keyframes expand-main-content {
 			from {
-				transform: translateX(60%);
+				transform: translateX(75%);
 				opacity: 0;
 			}
 			to {
@@ -272,9 +273,16 @@
 			display: inline-block;
 			height: 300px;
 			width: 300px;
+			height: auto;
 			margin: 0 16px 30px 0;
 			border: solid 1px #009e60;
 			border-top: solid 6px #00492C;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
+
+		.project-card:hover {
+  			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 		}
 
 		.project-card p {
@@ -428,7 +436,8 @@
 						<img class="img-responsive" src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" alt="">
 						<figcaption>
 							<h2>Recommendation Engine</h2>
-							<p>Freelance project automating the patient-product matching process for B. Braun Medical, an international pharmaceutical firm.</p>
+				           			<p>Freelance project, automating patient-to-product matching for B. Braun Medical, a major pharmaceutical firm.</p>
+
 						</figcaption>
 					</figure>
 				</div>
@@ -437,7 +446,7 @@
 						<img class="img-responsive" src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" alt="">
 						<figcaption>
 							<h2>WhatsApp Live Location</h2>
-							<p>University project, where I proposed and prototyped a live location feature for WhatsApp, six months before they actually built it.</p>
+							<p>University project, prototyping a live location feature for WhatsApp, six months before they actually built it.</p>
 						</figcaption>
 					</figure>
 				</div>
@@ -451,7 +460,7 @@
 				           		<img class="img-responsive" src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" alt="">
 				           		<figcaption>
 				           			<h2>Recommendation Engine</h2>
-				           			<p>Freelance project automating the patient-product matching process for B. Braun Medical, an international pharmaceutical firm.</p>
+				           			<p>Freelance project, automating patient-to-product matching for B. Braun Medical, a major pharmaceutical firm.</p>
 				           		</figcaption>
 				           	</figure>
 				        </div>
@@ -461,7 +470,7 @@
 				            	<img class="img-responsive" src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" alt="">
 				            	<figcaption>
 				            		<h2>WhatsApp Live Location</h2>
-				            		<p>University project, where I proposed and prototyped a live location feature for WhatsApp, six months before they actually built it.</p>
+				            		<p>University project, prototyping a live location feature for WhatsApp, six months before they actually built it.</p>
 				            	</figcaption>
 				            </figure>
 				        </div>
