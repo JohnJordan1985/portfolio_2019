@@ -241,10 +241,18 @@
 			}
 		}
 
+		.carousel {
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
+		.project-card img{
+			margin-right: 8px;
+		}
+
 		.project-wrapper {
 			text-align: center;
-			width: 100%;
 			position: relative;
+			max-width: 100%;
 		}
 
 		.carousel {
@@ -252,10 +260,10 @@
 		}
 
 		.project-card {
-			margin: 0 8px 30px 0;
-			float: left;
-			height: 345px;
-			width: 345px;
+			display: inline-block;
+			height: 320px;
+			width: 320px;
+			margin: 0 16px 30px 0;
 			border: solid 1px #009e60;
 			border-top: solid 6px #00492C;
 		}
@@ -264,10 +272,7 @@
 			text-align: left;
 			font-size: 12px;
 			padding: 0 8px;
-
 		}
-
-
 
 		@media only screen and (max-width: 767px) {
 			.project-wrapper {
@@ -278,6 +283,7 @@
 			    position: relative;
 			    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
 			    margin-top: 26px;
+			    max-width: 100%;
 			}
 
 			.carousel-inner {
@@ -294,6 +300,7 @@
 			.carousel-item {
 			    position: absolute;
 			    opacity: 0;
+			    height: auto;
 			    -webkit-transition: opacity 0.6s ease-out;
 			    transition: opacity 0.6s ease-out;
 			}
@@ -302,6 +309,11 @@
 			    display: block;
 			    height: auto;
 			    max-width: 100%;
+			}
+
+			.carousel-item h2, .carousel-item p {
+				padding: 0 8px;
+
 			}
 
 			.carousel-control {
@@ -314,7 +326,7 @@
 			    height: 40px;
 			    line-height: 35px;
 			    position: absolute;
-			    top: 50%;
+			    top: 30%;
 			    -webkit-transform: translate(0, -50%);
 			    cursor: pointer;
 			    -ms-transform: translate(0, -50%);
@@ -325,11 +337,11 @@
 			}
 
 			.carousel-control.prev {
-			    left: 2%;
+			    left: 0px;
 			}
 
 			.carousel-control.next {
-			    right: 2%;
+			    right: 0px;
 			}
 
 			.carousel-control:hover {
@@ -342,7 +354,6 @@
 			#carousel-3:checked ~ .control-3 {
 			    display: block;
 			}
-
 
 			#title {
 			    width: 100%;
@@ -361,10 +372,13 @@
 			main {
 				max-width: none;
 				display: inline-block;
-				width: 50%;
+				width: 75%;
 			}
-			header
-			.img-responsive.portrait-image {
+			.project-wrapper {
+				max-width: 900px;
+				float: left;
+			}
+			header .img-responsive.portrait-image {
 				position: relative;
 			    left: -300px;
 			    top: 300px;
@@ -424,22 +438,27 @@
 				    <div class="carousel-inner">
 				        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
 				        <div class="carousel-item">
-				            <img src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without">
+				           	<figure>
+				           		<img class="img-responsive" src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" alt="">
+				           		<figcaption>
+				           			<h2>Recommendation Engine</h2>
+				           			<p>Freelance project automating the patient-product matching process for B. Braun Medical, an international pharmaceutical firm.</p>
+				           		</figcaption>
+				           	</figure>
 				        </div>
 				        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
 				        <div class="carousel-item">
-				            <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=JavaScript">
+				            <figure>
+				            	<img class="img-responsive" src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" alt="">
+				            	<figcaption>
+				            		<h2>WhatsApp Live Location</h2>
+				            		<p>University project, where I proposed and prototyped a live location feature for WhatsApp, six months before they actually built it.</p>
+				            	</figcaption>
+				            </figure>
 				        </div>
-				        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-				        <div class="carousel-item">
-				            <img src="http://fakeimg.pl/2000x800/F90/fff/?text=Carousel">
-				        </div>
-				        <label for="carousel-3" class="carousel-control prev control-1">‹</label>
 				        <label for="carousel-2" class="carousel-control next control-1">›</label>
 				        <label for="carousel-1" class="carousel-control prev control-2">‹</label>
-				        <label for="carousel-3" class="carousel-control next control-2">›</label>
-				        <label for="carousel-2" class="carousel-control prev control-3">‹</label>
-				        <label for="carousel-1" class="carousel-control next control-3">›</label>
+
 				    </div>
 				</div>
 			</section>
@@ -463,6 +482,7 @@
 				<small>copyright - 2019 - John Jordan</small>
 			</p>
 		</footer>
+
 	</div>
 
 </body>
