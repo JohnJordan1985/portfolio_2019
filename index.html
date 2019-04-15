@@ -52,13 +52,13 @@
 
 		}
 		nav {
+			z-index: 3;
 			position: fixed;
 			top: 0;
 			right: 16px;
-			z-index: 3;
-			-webkit-animation: move-navbar-down 1 2s ease-in-out;
-			-o-animation: move-navbar-down 1 2s ease-in-out;
-			animation: move-navbar-down 1 2s ease-in-out;
+			-webkit-animation: move-navbar-right 1 2s ease-in-out;
+			-o-animation: move-navbar-right 1 2s ease-in-out;
+			animation: move-navbar-right 1 2s ease-in-out;
 		}
 		.navigation-links {
 			font-family: "IBM Plex Mono", monospace;
@@ -68,10 +68,6 @@
 		  	overflow: hidden;
 		  	background-color: white;
 		  	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-		  	position: fixed;
-		  	top: 0;
-		  	right: 0;
-
 		}
 		.navigation-links li {
 			float: left;
@@ -230,18 +226,26 @@
 		  }
 		}
 
-		@keyframes move-navbar-down {
+		@keyframes move-navbar-right {
 			0% {
-			    opacity: 0;
-			    transform: translateY(-3rem);
-			  }
-			  99% {
-			  	opacity: 0;
-			  }
-			  100% {
-			    opacity: 1;
-			    transform: translateY(0);
-			  }
+				opacity: 0;
+				left: 0;
+			}
+			5% {
+				transform: translateX(-90%);
+			}
+			30% {
+				opacity: 1;
+
+			}
+			90% {
+				transform: translateX(10%);
+			}
+
+			100% {
+				transform: translateX(0%);
+				right: 16px; /* original value */
+			}
 		}
 
 		@media only screen and (max-width: 767px) {
