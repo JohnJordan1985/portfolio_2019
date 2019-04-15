@@ -298,6 +298,11 @@
 			text-align: right;
 		}
 
+		.project-card figure {
+			width: 340px;
+			height: 325px; /* Given margin-bottom of 15px */
+		}
+
 		.project-card a {
 			display: inline-block;
 			width: auto;
@@ -375,7 +380,7 @@
 		    position: relative;
 		    overflow: visible;
 		    min-width: 100%;
-		    padding-right: 30px; /* To provide space for carousel arrow to rotate */
+		    padding-top: 60px; /* To provide space for carousel arrow to rotate, given height of 40px and offset-from-top position */
 		}
 
 		.carousel-open:checked + .carousel-item {
@@ -411,8 +416,6 @@
 		    color: #00492c;
 		    cursor: pointer;
 		    display: none;
-
-
 		    text-align: center;
 		    width: 40px;
 		    z-index: 3;
@@ -420,12 +423,11 @@
 
 		.carousel-control.prev, .carousel-control.next {
 		    right: 0px;
-		    top: 25%;
+		    top: 0px;
 		    font-size: 40px;
 		    height: 40px;
 		    line-height: 35px;
 		    position: absolute;
-		    top: 25%;
 		}
 
 
@@ -489,7 +491,6 @@
 				display: inline-block;
 				width: 75%;
 			}
-
 
 		}
 		@media only screen and (min-width: 768px) {
