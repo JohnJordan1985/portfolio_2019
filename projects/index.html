@@ -126,6 +126,9 @@
 			z-index: 1;
 			background-color: white;
 		}
+		main, section {
+			max-width: 100%;
+		}
 		main {
 			margin-top: 75px;
 			height: 100%;
@@ -224,8 +227,8 @@
 		}
 
 		span.test-opp-global-top-right {
-			top: -10px;
-			right: -15px;
+			top: 0px;
+			right: 0px;
 			z-index: 3;
 		}
 
@@ -290,27 +293,21 @@
 			}
 		}
 
-		.carousel {
-			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-			display: none;
-
-		}
 		.project-wrapper {
-			text-align: center;
-			display:block;
+			display:none;
+			text-align: right;
 		}
 
-		.project-wrapper a {
+		.project-card a {
 			display: inline-block;
 			width: auto;
 			margin: 0 auto;
 		}
 
-		.project-wrapper a[target='_blank']::after {
+		.project-card a[target='_blank']::after {
 			content: '\29C9';
 		}
-		.project-wrapper a:hover {
+		.project-card a:hover {
 			color: #60005C;
 			font-weight: 600;
 		}
@@ -354,9 +351,7 @@
 
 		.project-card figure {
 			display: inline-block;
-			margin-bottom: 15px;
-			height: 325px;
-			width: 340px; /* On account of 15px margin-bottom */
+			margin-bottom: 0;
 		}
 
 		.project-card:hover {
@@ -379,87 +374,120 @@
 			padding: 0 8px;
 		}
 
-		@media only screen and (max-width: 767px) {
-			.project-wrapper {
-				display: none;
-			}
-			.carousel {
-				display: block;
-			    position: relative;
-			    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-			    margin-top: 26px;
-			    max-width: 100%;
-			}
+		section.carousel-container {
+			padding: 0;
+			position: relative;
+			right: 15px; /* Since 15px on main element, horizontally */
+		}
 
-			.carousel-inner {
-			    position: relative;
-			    overflow: hidden;
-			    width: 100%;
-			}
 
-			.carousel-open:checked + .carousel-item {
-			    position: static;
-			    opacity: 100;
-			}
+		.carousel {
+			display: block;
+		    position: relative;
+		    width: 100%;
+		    max-width: 100%;
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
 
-			.carousel-item {
-			    position: absolute;
-			    opacity: 0;
-			    height: auto;
-			    -webkit-transition: opacity 0.6s ease-out;
-			    transition: opacity 0.6s ease-out;
-			}
+		.carousel-inner {
+		    position: relative;
+		    overflow: visible;
+		    min-width: 100%;
+		}
 
-			.carousel-item img {
-			    display: block;
-			    height: auto;
-			    max-width: 100%;
-			}
+		.carousel-open:checked + .carousel-item {
+		    position: static;
+		    opacity: 100;
+		    -webkit-animation: carousel-slide-switch 1 1s ease-in-out;
+		    -o-animation: carousel-slide-switch 1 1s ease-in-out;
+		    animation: carousel-slide-switch 1 1s ease-in-out;
+		}
 
-			.carousel-item h2, .carousel-item p {
-				padding: 0 8px;
-			}
+		.carousel-item {
+		    position: absolute;
+		    opacity: 0;
+		    height: auto;
+		    -webkit-transition: opacity 0.6s ease-out;
+		    transition: opacity 0.6s ease-out;
+		    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
 
-			.carousel-control {
-			    background: rgba(0, 0, 0, 0.28);
-			    border-radius: 50%;
-			    color: #fff;
-			    cursor: pointer;
-			    display: none;
-			    font-size: 40px;
-			    height: 40px;
-			    line-height: 35px;
-			    position: absolute;
-			    top: 30%;
-			    -webkit-transform: translate(0, -50%);
-			    cursor: pointer;
-			    -ms-transform: translate(0, -50%);
-			    transform: translate(0, -50%);
-			    text-align: center;
-			    width: 40px;
-			    z-index: 10;
-			}
+		.carousel-item img {
+		    display: block;
+		    height: auto;
+		    max-width: 100%;
+		}
 
-			.carousel-control.prev {
-			    left: 0px;
-			}
+		.carousel-item h2, .carousel-item p {
+			padding: 0 8px;
+		}
 
-			.carousel-control.next {
-			    right: 0px;
-			}
+		.carousel-control {
+		    background: rgb(128, 207, 176, .5); /* Hex code is #80cfb0 */
+		    border-radius: 50%;
+		    color: #00492c;
+		    cursor: pointer;
+		    display: none;
 
-			.carousel-control:hover {
-			    background: rgba(0, 0, 0, 0.8);
-			    color: #aaaaaa;
-			}
 
-			#carousel-1:checked ~ .control-1,
-			#carousel-2:checked ~ .control-2,
-			#carousel-3:checked ~ .control-3 {
-			    display: block;
+		    text-align: center;
+		    width: 40px;
+		    z-index: 3;
+		}
+
+		.carousel-control.prev, .carousel-control.next {
+		    right: 0px;
+		    top: 25%;
+		    font-size: 40px;
+		    height: 40px;
+		    line-height: 35px;
+		    position: absolute;
+		    top: 25%;
+		}
+
+
+		#carousel-1:checked ~ .control-1,
+		#carousel-2:checked ~ .control-2 {
+		    display: block;
+		    -webkit-animation: rotate-carousel-controls 1 1s ease-in-out;
+		    -o-animation: rotate-carousel-controls 1 1s ease-in-out;
+		    animation: rotate-carousel-controls 1 1s ease-in-out;
+		}
+
+
+		@keyframes carousel-slide-switch {
+			from {
+				-webkit-transform: translateX(-100%);
+				transform: translateX(-100%);
+			}
+			to {
+				-webkit-transform: translateX(0%);
+				transform: translateX(0%);
 			}
 
 		}
+
+		@keyframes rotate-carousel-controls {
+			0% {
+
+				-webkit-transform: rotate(180deg);;
+				transform: rotate(180deg);;
+
+			}
+			27% {
+
+				-webkit-transform: rotate(45deg);
+				transform:rotate(45deg);
+			}
+
+			100% {
+
+				-webkit-transform: rotate(0deg) ;
+				transform:rotate(0deg);
+			}
+		}
+
+
 		@media only screen and (min-width: 1200px) {
 			main {
 				max-width: none;
@@ -477,7 +505,33 @@
 
 			}
 		}
+		@media only screen and (min-width: 768px) {
+			.project-wrapper {
+				display: inline-block;
+			}
+			.carousel {
+				display: none;
+			}
 
+		}
+		@media only screen and (min-width: 500px) {
+			section.carousel-container {
+				position: static;
+			}
+
+			.carousel {
+		    	overflow: hidden;
+
+			}
+
+			.project-card figure {
+				display: inline-block;
+				margin-bottom: 15px;
+				height: 325px;
+				width: 340px; /* On account of 15px margin-bottom */
+				max-width: 100%;
+			}
+		}
 	</style>
 </head>
 <body class="background-image-square">
@@ -509,7 +563,6 @@
 				<div class="project-card recommendation-engine-project">
 					<figure>
 						<div class="poster-block recommendation-engine-project">
-
 						</div>
 						<figcaption>
 							<h2>Recommendation Engine</h2>
@@ -525,7 +578,6 @@
 				<div class="project-card whatsapp-project">
 					<figure>
 						<div class="poster-block whatsapp-project">
-
 						</div>
 						<figcaption>
 							<h2>WhatsApp Live Location</h2>
@@ -537,28 +589,42 @@
 					</figure>
 				</div>
 			</section>
-			<section>
+			<section class="carousel-container">
 				<div class="carousel">
 				    <div class="carousel-inner">
 				        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
 				        <div class="carousel-item">
-				           	<figure>
-				           		<img class="img-responsive" src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" alt="">
-				           		<figcaption>
-				           			<h2>Recommendation Engine</h2>
-				           			<p>Freelance project, automating patient-to-product matching for B. Braun Medical, a major pharmaceutical firm.</p>
-				           		</figcaption>
-				           	</figure>
+           					<div class="project-card recommendation-engine-project">
+								<figure>
+									<div class="poster-block recommendation-engine-project">
+									</div>
+									<figcaption>
+										<h2>Recommendation Engine</h2>
+							           	<p class="no-margin-bottom">
+							           		Freelance project, automating patient-to-product matching for B. Braun Medical, a major pharmaceutical firm.
+							           	</p>
+							           	<p class="text-align-center">
+							           		<a href="#" target="_blank">Learn more...</a>
+							           	</p>
+									</figcaption>
+								</figure>
+							</div>
 				        </div>
 				        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
 				        <div class="carousel-item">
-				            <figure>
-				            	<img class="img-responsive" src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" alt="">
-				            	<figcaption>
-				            		<h2>WhatsApp Live Location</h2>
-				            		<p>University project, prototyping a live location feature for WhatsApp, six months before they actually built it.</p>
-				            	</figcaption>
-				            </figure>
+				            <div class="project-card whatsapp-project">
+				            	<figure>
+				            		<div class="poster-block whatsapp-project">
+				            		</div>
+				            		<figcaption>
+				            			<h2>WhatsApp Live Location</h2>
+				            			<p class="no-margin-bottom">University project, prototyping a live location feature for WhatsApp, six months before they actually built it.</p>
+				            			<p class="text-align-center">
+				            				<a href="#" target="_blank">Learn more...</a>
+				            			</p>
+				            		</figcaption>
+				            	</figure>
+				            </div>
 				        </div>
 				        <label for="carousel-2" class="carousel-control next control-1">›</label>
 				        <label for="carousel-1" class="carousel-control prev control-2">‹</label>
