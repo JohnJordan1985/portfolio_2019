@@ -38,6 +38,12 @@
 			line-height: 48px;
 			padding: 0 12px;
 		}
+		h2 {
+			font-size: 24px;
+			line-height: 30px;
+			padding: 0 8px;
+			text-align: left;
+		}
 		em {
 			font-style: italic;
 		}
@@ -194,7 +200,7 @@
 			position: relative;
 		}
 
-		span.test, span.test-opp {
+		span.test, span.test-opp, span.test-opp-global-top-right {
 			position: absolute;
 			display: inline-block;
 			width: 50px;
@@ -216,6 +222,13 @@
 			bottom: -10px; /* on account of margin-bottom of 60px on h1 */
 			right: -15px;
 		}
+
+		span.test-opp-global-top-right {
+			top: -10px;
+			right: -15px;
+			z-index: 3;
+		}
+
 
 		@keyframes example {
 		  0% {
@@ -287,6 +300,7 @@
 			text-align: center;
 			display:block;
 		}
+
 		.project-wrapper a {
 			display: inline-block;
 			width: auto;
@@ -300,6 +314,7 @@
 			color: #60005C;
 			font-weight: 600;
 		}
+
 		.project-card figure .poster-block {
 			margin: 0;
 			padding: 0;
@@ -325,20 +340,23 @@
 		}
 
 
-		.project-card img{
-			margin-right: 8px;
-		}
-
 		.project-card {
 			display: inline-block;
-			height: 300px;
-			width: 300px;
+			text-align: center;
+			width: auto;
 			height: auto;
-			margin: 0 30px 30px 0;
+			margin: 0 15px 30px;
 			border: solid 1px #009e60;
 			border-top: solid 6px #00492C;
 			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
+
+		.project-card figure {
+			display: inline-block;
+			margin-bottom: 15px;
+			height: 325px;
+			width: 340px; /* On account of 15px margin-bottom */
 		}
 
 		.project-card:hover {
@@ -400,7 +418,6 @@
 
 			.carousel-item h2, .carousel-item p {
 				padding: 0 8px;
-
 			}
 
 			.carousel-control {
@@ -442,18 +459,6 @@
 			    display: block;
 			}
 
-			#title {
-			    width: 100%;
-			    position: absolute;
-			    padding: 0px;
-			    margin: 0px auto;
-			    text-align: center;
-			    font-size: 27px;
-			    color: rgba(255, 255, 255, 1);
-			    font-family: 'Open Sans', sans-serif;
-			    z-index: 9999;
-			    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
-			}
 		}
 		@media only screen and (min-width: 1200px) {
 			main {
@@ -462,7 +467,7 @@
 				width: 75%;
 			}
 			.project-wrapper {
-				max-width: 760px;
+				max-width: 790px;
 			}
 			header .img-responsive.portrait-image {
 				position: relative;
@@ -476,6 +481,7 @@
 	</style>
 </head>
 <body class="background-image-square">
+	<span class="test-opp-global-top-right"></span>
 	<div class="main-container">
 		<nav>
 			<ul class="navigation-links">
