@@ -116,9 +116,9 @@
 			margin: 45px auto;
 
 		}
-		.header-image {
+		header .header-image {
 			width: auto;
-			height: 100vh;
+			height: 1000px;
 		}
 		header h1 {
 			position: relative;
@@ -131,6 +131,13 @@
 
 		figure {
 			margin: 0 0 30px;
+		}
+		figure.project-cover-image {
+			background: linear-gradient(rgba(240,240,240, 0.2), rgba(240,240,240, 0.2)),
+			url(http://johnjordan.design/img/whatsapp-live-location/cover-image-large.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			height: 100vh;
 		}
 		small {
 			font-size: 12px;
@@ -271,15 +278,14 @@
 	</style>
 </head>
 <body class="background-image-square">
-
 	<span class="test"></span>
 	<span class="test-opp-global-bottom"></span>
 	<div class="main-container">
-		<img class="img-responsive header-image" src="http://johnjordan.design/img/whatsapp-live-location/cover-image-large.png" alt="Collage of three stages of WhatsApp project: initial oonception, wireframes, then final mock-up.">
+		<figure class="project-cover-image"></figure>
 		<nav>
 			<ul class="navigation-links">
-				<li class="active"><a href="../index.html">Home</a></li>
-				<li><a href="index.html">Projects</a></li>
+				<li ><a href="../index.html">Home</a></li>
+				<li class="active"><a href="projects/index.html">Projects</a></li>
 			</ul>
 		</nav>
 		<main>
