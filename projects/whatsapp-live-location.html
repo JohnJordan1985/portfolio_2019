@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,600" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+	<title>WhatsApp Live Location</title>
+	<style>
+		* {
+		 box-sizing: border-box;
+		 /* border: solid 1px gray; */
+		}
+		*:before,
+		*:after {
+		 box-sizing: border-box;
+		}
+		html,
+		body {
+		 height: 100%;
+		 min-height: 100%;
+		 height: auto;
+		 position: relative;
+		 /* Baseline grind vertical rhytmn based on multiples of 15px margin: 60px 0 0; */
+		 margin: 0;
+		 padding: 0;
+		 font-family: "IBM Plex Mono", monospace;
+		 font-weight: 300;
+		 color: rgb(60,60,60);
+		 text-align: center;
+		}
+		/* Classical typographical scale: 9	10	11	12	14	16	18	21	24	30	36	48	60	72 */
+		h1 {
+			font-weight: 600;
+			color: #00492C;
+			margin-top: 0;
+			font-size: 36px ;
+			line-height: 48px;
+			padding-left: 12px;
+		}
+		em {
+			font-style: italic;
+		}
+		.font-shamrock-green {
+			color: #009e60;
+		}
+		.background-image-square {
+			background-image: url(http://johnjordan.design/img/background_body.png);
+			background-repeat: repeat;
+			background-attachment: fixed;
+
+		}
+		nav {
+			z-index: 3;
+			position: fixed;
+			top: 0;
+			right: 16px;
+			-webkit-animation: move-navbar-right 1 2s ease-in-out;
+			-o-animation: move-navbar-right 1 2s ease-in-out;
+			animation: move-navbar-right 1 2s ease-in-out;
+		}
+		.navigation-links {
+			font-family: "IBM Plex Mono", monospace;
+		  	list-style-type: none;
+		  	margin: 0;
+		  	padding: 0;
+		  	overflow: hidden;
+		  	background-color: white;
+		  	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		}
+		.navigation-links li {
+			float: left;
+			margin: 0 8px;
+		}
+		.navigation-links li a {
+			font-weight: 300;
+		  	display: block;
+		  	padding: 5px; /* keeps in line with 50x50 square */
+		  	text-decoration: none;
+		  	color: #AB1EA5;
+		}
+		.navigation-links li.active a {
+			color: #60005C;
+			font-weight: 600;
+		}
+		.img-responsive {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 30px;
+		}
+		.main-container {
+		 min-height: 100vh; /* will cover the 100% of viewport */
+		 overflow: hidden;
+		 display: block;
+		 position: relative;
+		 padding-bottom: 155px; /* height of your footer */
+		}
+
+		main, header, section {
+			display: inline-block;
+			max-width: 790px;
+			margin: 0 auto 30px;
+			text-align: left;
+			padding: 0 15px;
+			position: relative;
+			z-index: 1;
+			background-color: white;
+		}
+		main {
+			margin-top: 75px;
+			height: 100%;
+			background-color: white;
+		}
+		header {
+			margin: 45px auto;
+
+		}
+		.header-image {
+			width: auto;
+			height: 100vh;
+		}
+		header h1 {
+			position: relative;
+			background-color: white;
+			z-index: 2;
+			margin: 0;
+			max-width: 700px;
+
+		}
+
+		figure {
+			margin: 0 0 30px;
+		}
+		small {
+			font-size: 12px;
+		}
+
+		footer {
+			position: absolute;
+		 	bottom: 0;
+		 	width: 100%;
+		 	background-color: white;
+		}
+		.social-icon-wrapper {
+			display: inline-block;
+			width: 20%;
+		}
+		.social-icons {
+			font-size: 30px;
+			line-height: 48px;
+			display: inline-block;
+			margin: 30px auto;
+			text-decoration: none;
+			color: #00492C;
+		}
+
+		.social-icons:hover, .social-icons:active, .social-icons:visited {
+			color: #80CFB0;
+		}
+
+		p, ul, ol {
+			font-size: 21px;
+			line-height: 30px;
+			margin: 0 0 30px;
+		}
+		ol {
+			list-style-type: disc;
+		}
+
+
+		ol > li:before {
+			font-weight: 700;
+		}
+		.indented-by-16px {
+			padding-left: 32px;
+		}
+
+		.position-relative {
+			position: relative;
+		}
+
+		span.test, span.test-opp, .test-opp-global-bottom  {
+			position: absolute;
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			max-width: 100%; /* Avoids overfilling parent container when animation start */
+			background: #00623a;
+			-webkit-animation: example 1 2s ease-in-out;
+			-o-animation: example 1 2s ease-in-out;
+			animation: example 1 2s ease-in-out;
+		}
+
+		span.test {
+			top: -10px;
+			left: -15px; /* on account of padding horizontal of 15px */
+		}
+
+		span.test-opp {
+			bottom: -10px; /* on account of margin-bottom of 60px on h1 */
+			right: -15px;
+		}
+
+
+		span.test-opp-global-bottom {
+			bottom: 0px; /* on account of margin-bottom of 60px on h1 */
+			right: 0px;
+			z-index: 3;
+		}
+
+
+		@keyframes example {
+		  0% {
+		  	max-width: none;
+		  	width: 100%;
+		  	height: 10000%;
+		  	z-index: 10;
+		  }
+		  90%{
+  		  	z-index: 10;
+  		  	width: 35px;
+  		  	height: 35px;
+  		  }
+		  100% {
+		  	width: 50px;
+		  	height: 50px;
+		  	z-index: 0;
+		  }
+		}
+
+		@keyframes move-navbar-right {
+			0% {
+				opacity: 0;
+				left: 0;
+			}
+			5% {
+				transform: translateX(-90%);
+			}
+			30% {
+				opacity: 1;
+
+			}
+			90% {
+				transform: translateX(10%);
+			}
+
+			100% {
+				transform: translateX(0%);
+				right: 16px; /* original value */
+			}
+		}
+
+		@media only screen and (min-width: 1200px) {
+			main {
+				position: relative;
+				top: -300px; /* Height of portrait image at this size */
+				max-width: none;
+				display: inline-block;
+				width: 50%;
+			}
+			header .img-responsive.portrait-image {
+				position: relative;
+			    left: -300px;
+			    top: 300px;
+			    z-index: 0;
+
+			}
+		}
+
+	</style>
+</head>
+<body class="background-image-square">
+
+	<span class="test"></span>
+	<span class="test-opp-global-bottom"></span>
+	<div class="main-container">
+		<img class="img-responsive header-image" src="http://johnjordan.design/img/whatsapp-live-location/cover-image-large.png" alt="Collage of three stages of WhatsApp project: initial oonception, wireframes, then final mock-up.">
+		<nav>
+			<ul class="navigation-links">
+				<li class="active"><a href="../index.html">Home</a></li>
+				<li><a href="index.html">Projects</a></li>
+			</ul>
+		</nav>
+		<main>
+			<header>
+
+				<div class="position-relative">
+					<span class="test"></span>
+					<h1>
+						I&apos;m <strong class="font-shamrock-green">John Jordan</strong> &mdash; digital designer, front-end developer and beer lover.
+					</h1>
+					<span class="test-opp"></span>
+				</div>
+
+			</header>
+			<section>
+				<p>
+					I&apos;m a hybrid designer/developer, with a pharmacy and life sciences background, and this portfolio shows the work that:
+					<ol class="indented-by-16px">
+						<li>best displays my range of skills, and</li>
+						<li>represents the work that I <em>want to be doing</em>.</li>
+					</ol>
+				</p>
+				<p>
+					I&apos;m based in the Bay Area, writing HTML, CSS and JS on a daily basis, as well as creating content with Photoshop and Illustrator.
+				</p>
+				<p>
+				</p>
+
+			</section>
+		</main>
+		<footer>
+			<hr />
+			<div class="social-icon-wrapper">
+				<a class="social-icons" href="https://www.linkedin.com/in/johnjordan-design/" target="_blank" title="View my LinkedIn account. (Opens in a new window.)"><span class="fab fa-linkedin-in"></span></a>
+			</div>
+			<div class="social-icon-wrapper">
+				<a class="social-icons" href="https://medium.com/@johnjordan1985" target="_blank" title="View my Medium blog. (Opens in a new window.)"><span class="fab fa-medium-m"></span></a>
+			</div>
+			<div class="social-icon-wrapper">
+				<a class="social-icons" href="https://github.com/JohnJordan1985" target="_blank" title="View my GitHub account. (Opens in a new window.)"><span class="fab fa-github"></span></a>
+			</div>
+			<div class="social-icon-wrapper">
+				<a class="social-icons" href="mailto:john@reduct.co.uk" target="_blank" title="Email me at: john@reduct.co.uk"><span class="fas fa-envelope"></span></a>
+
+			</div>
+			<p>
+				<small>copyright - 2019 - John Jordan</small>
+			</p>
+		</footer>
+	</div>
+
+</body>
+</html>
