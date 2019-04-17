@@ -302,11 +302,10 @@
 		}
 
 		.project-card figure {
-			width: 340px;
-			height: 325px; /* Given margin-bottom of 15px */
+			width: 100%;
+			height: auto; /* Have to abandon square dimensions on -xs screens */
+			max-width: 100%;
 		}
-
-
 
 		.project-card a {
 			font-weight: 300;
@@ -354,7 +353,7 @@
 			text-align: center;
 			width: auto;
 			height: auto;
-			margin: 0 15px 30px;
+			margin: 0 0 30px;
 			border: solid 1px #009e60;
 			border-top: solid 6px #00492C;
 			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -364,6 +363,10 @@
 		.project-card figure {
 			display: inline-block;
 			margin-bottom: 0;
+		}
+
+		.project-card figure p {
+
 		}
 
 
@@ -565,6 +568,10 @@
 			.carousel {
 		    	overflow: hidden;
 
+			}
+
+			.project-card {
+				margin: 0 15px 30px;
 			}
 
 			.project-card figure {
