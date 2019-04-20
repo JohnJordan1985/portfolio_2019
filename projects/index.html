@@ -100,8 +100,15 @@
 		  	color: #AB1EA5;
 		}
 		.navigation-links li.active a {
-			color: #60005C;
+			color: #FFFFFF;
+			background-color: #60005C;
 			font-weight: 600;
+		}
+		.dummy-link {
+			font-size: inherit;
+			line-height: inherit;
+			color: inherit;
+			text-decoration: none;
 		}
 		.img-responsive {
 			display: block;
@@ -301,6 +308,10 @@
 			text-align: right;
 		}
 
+		.project-card:hover {
+			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+		}
+
 		.project-card figure {
 			width: 100%;
 			height: auto; /* Have to abandon square dimensions on -xs screens */
@@ -365,23 +376,11 @@
 			margin-bottom: 0;
 		}
 
-		.project-card figure p {
-
-		}
-
-
 		.project-card p {
 			text-align: left;
 			font-size: 12px;
 			padding: 0 8px;
 		}
-
-		section.carousel-container {
-			padding: 0;
-			position: relative;
-			right: 15px; /* Since 15px on main element, horizontally */
-		}
-
 
 		.carousel {
 			display: block;
@@ -395,7 +394,7 @@
 		    position: relative;
 		    overflow: visible;
 		    min-width: 100%;
-		    padding-top: 60px; /* To provide space for carousel arrow to rotate, given height of 40px and offset-from-top position */
+		    padding-top: 75px; /* To provide space for carousel arrow to rotate, given height of 40px and offset-from-top position */
 		}
 
 		.carousel-open:checked + .carousel-item {
@@ -411,7 +410,7 @@
 		.carousel-item {
 		    position: absolute;
 		    opacity: 0;
-		    display: none; /*To provent overhang from one slide to another */
+		    display: none; /*To prevent overhang from one slide to another */
 		    z-index: 0;
 		    height: auto;
 		    -webkit-transition: opacity 0.6s ease-out;
@@ -430,23 +429,35 @@
 		}
 
 		.carousel-control {
-		    background: rgba(128, 207, 176, .5); /* Hex code is #80cfb0 */
-		    border-radius: 50%;
-		    color: #00492c;
+			font-size: 9px;
+			line-height: 12px;
 		    cursor: pointer;
 		    display: none;
 		    text-align: center;
-		    width: 40px;
+		    width: 100%;
 		    z-index: 3;
+		    -webkit-animation: rotate-carousel-controls 1 1s ease-in-out;
+		    -o-animation: rotate-carousel-controls 1 1s ease-in-out;
+		    animation: rotate-carousel-controls 1 1s ease-in-out;
+		}
+		.carousel-control-active {
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 9px;
+			background: rgba(128, 207, 176, .5); /* Hex code is #80cfb0 */
+			/*border-radius: 50%;*/
+			color: #00492c;
 		}
 
 		.carousel-control.prev, .carousel-control.next {
-		    right: 0px;
-		    top: 0px;
-		    font-size: 40px;
-		    height: 40px;
-		    line-height: 35px;
 		    position: absolute;
+		    left: 0px;
+		    top: 0px;
+		    height: 40px;
+		}
+
+		.carousel-control.prev {
+			bottom: 0;
 		}
 
 
@@ -474,8 +485,8 @@
 		@keyframes rotate-carousel-controls {
 			0% {
 
-				-webkit-transform: rotate(180deg);;
-				transform: rotate(180deg);;
+				-webkit-transform: rotate(0);;
+				transform: rotate(0);;
 
 			}
 			27% {
@@ -635,7 +646,7 @@
 				           		Freelance project, automating patient-to-product matching for B. Braun Medical, a major pharmaceutical firm.
 				           	</p>
 				           	<p class="text-align-center">
-				           		<a class="font-light-purple" href="../projects/recommendation-engine">Learn more...
+				           		<a class="font-light-purple" href="../projects/recommendation-engine">Read all about it!..
 				           			<!-- <span class="double-window-wrapper">
 				           				<i class="far fa-square"></i><span class="fa-square-offset"><i class="far fa-square"></i></span>
 				           			</span> -->
@@ -653,7 +664,7 @@
 							<h2>WhatsApp Live Location</h2>
 							<p class="no-margin-bottom">University project, prototyping a live location feature for WhatsApp, six months before they actually built it.</p>
 							<p class="text-align-center">
-								<a class="font-light-purple" href="../projects/whatsapp-live-location">Learn more...
+								<a class="font-light-purple" href="../projects/whatsapp-live-location">Read all about it!..
 									<!-- <span class="double-window-wrapper">
 										<i class="far fa-square"></i><span class="fa-square-offset"><i class="far fa-square"></i></span>
 									</span> -->
@@ -679,7 +690,7 @@
 							           		Freelance project, automating patient-to-product matching for B. Braun Medical, a major pharmaceutical firm.
 							           	</p>
 							           	<p class="text-align-center">
-							           		<a class="font-light-purple" href="../projects/recommendation-engine" target="_blank">Learn more...
+							           		<a class="font-light-purple" href="../projects/recommendation-engine" target="_blank">Read all about it!..
 							           			<!-- <span class="double-window-wrapper">
 													<i class="far fa-square"></i><span class="fa-square-offset"><i class="far fa-square"></i></span>
 												</span> -->
@@ -700,7 +711,7 @@
 				            			<h2>WhatsApp Live Location</h2>
 				            			<p class="no-margin-bottom">University project, prototyping a live location feature for WhatsApp, six months before they actually built it.</p>
 				            			<p class="text-align-center">
-            				           		<a class="font-light-purple" href="../projects/whatsapp-live-location" target="_blank">Learn more...
+            				           		<a class="font-light-purple" href="../projects/whatsapp-live-location" target="_blank">Read all about it!..
             				           			<!-- <span class="double-window-wrapper">
             										<i class="far fa-square"></i><span class="fa-square-offset"><i class="far fa-square"></i></span>
             									</span> -->
@@ -710,8 +721,16 @@
 				            	</figure>
 				            </div>
 				        </div>
-				        <label for="carousel-2" class="carousel-control next control-1">›</label>
-				        <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+				        <label for="carousel-2" class="carousel-control next control-1">
+				        	<span style="">WhatsApp Live Location</span>
+				        	<a href="#carousel-2" class="dummy-link carousel-control-active">
+					        	Recommendation Engine
+				        	</a>
+				        </label>
+				        <label for="carousel-1" class="carousel-control prev control-2">
+	        	        	<a href="#carousel-1" class="dummy-link carousel-control-active" >WhatsApp Live Location</a>
+				        	<span style="">Recommendation Engine</span>
+				        </label>
 				    </div>
 				</div>
 			</section>
