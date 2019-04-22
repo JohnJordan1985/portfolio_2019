@@ -470,19 +470,19 @@
 			animation: hide-background-while-toggling 1 0.73s linear;
 		}
 
-		.animation-carousel-active-highlight-left, .animation-carousel-active-highlight-right {
+		.animation-carousel-active-highlight-left, .animation-carousel-active-highlight-left-xs, .animation-carousel-active-highlight-right {
 			display: inline-block;
 			width: 15px;
 			height: 15px;
 			position: absolute;
-			top: -5px;
-			z-index: 0;
+			z-index: 3;
 			background-color: #80cfb0;
 			display: none;
 		}
 
 		.animation-carousel-active-highlight-right {
 			right: -15000px;
+			top: 0;
 			-webkit-animation: toggle-active-carousel-control-right 1 0.73s ease-in-out;
 			-o-animation: toggle-active-carousel-control-right 1 0.73s ease-in-out;
 			animation: toggle-active-carousel-control-right 1 0.73s ease-in-out;
@@ -490,9 +490,18 @@
 
 		.animation-carousel-active-highlight-left {
 			left: -45px;
+			top: 30px;
 			-webkit-animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
 			-o-animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
 			animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
+		}
+
+		.animation-carousel-active-highlight-left-xs {
+			left: -45px;
+			bottom: 0px;
+			-webkit-animation: toggle-active-carousel-control-left-xs 1 0.73s ease-in-out;
+			-o-animation: toggle-active-carousel-control-left-xs 1 0.73s ease-in-out;
+			animation: toggle-active-carousel-control-left-xs 1 0.73s ease-in-out;
 		}
 
 		.carousel-control.prev, .carousel-control.next {
@@ -541,7 +550,7 @@
 
 		@keyframes toggle-active-carousel-control-left {
 			0%{
-				top:0 ;
+				bottom: 0;
 				right: -45px;
 				width: 25%;
 			}
@@ -554,6 +563,25 @@
 			90% {
 				width: 60%;
 				left:50%;
+			}
+		}
+
+		@keyframes toggle-active-carousel-control-left-xs {
+			0%{
+				bottom: 0;
+				right: -45px;
+				width: 25%;
+			}
+
+			74% {
+				width: 50%;
+				left: 105%;
+			}
+
+			90% {
+				width: 60%;
+				left:50%;
+				top:30px;
 			}
 		}
 
@@ -658,7 +686,12 @@
 			}
 			.carousel {
 		    	overflow: hidden;
-
+			}
+			.animation-carousel-active-highlight-left {
+				top: 0px;
+				-webkit-animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
+				-o-animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
+				animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
 			}
 			.carousel-control-active {
 				display: inline-block;
@@ -820,6 +853,7 @@
     				        	Recommendation Engine
     			        	</a>
     			        	<span class="animation-carousel-active-highlight-left"></span>
+    			        	<span class="animation-carousel-active-highlight-left-xs"></span>
     			        </label>
     			        <hr class="carousel-menu-hr">
 				    </div>
