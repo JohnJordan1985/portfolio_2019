@@ -470,7 +470,7 @@
 			animation: hide-background-while-toggling 1 0.73s linear;
 		}
 
-		.animation-carousel-active-highlight-left, .animation-carousel-active-highlight-left-xs, .animation-carousel-active-highlight-right {
+		.animation-carousel-active-highlight-left, .animation-carousel-active-highlight-right {
 			display: inline-block;
 			width: 15px;
 			height: 15px;
@@ -494,14 +494,6 @@
 			-webkit-animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
 			-o-animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
 			animation: toggle-active-carousel-control-left 1 0.73s ease-in-out;
-		}
-
-		.animation-carousel-active-highlight-left-xs {
-			left: -45px;
-			bottom: 0px;
-			-webkit-animation: toggle-active-carousel-control-left-xs 1 0.73s ease-in-out;
-			-o-animation: toggle-active-carousel-control-left-xs 1 0.73s ease-in-out;
-			animation: toggle-active-carousel-control-left-xs 1 0.73s ease-in-out;
 		}
 
 		.carousel-control.prev, .carousel-control.next {
@@ -551,7 +543,7 @@
 		@keyframes toggle-active-carousel-control-left {
 			0%{
 				bottom: 0;
-				right: -45px;
+				left: -45px;
 				width: 25%;
 			}
 
@@ -566,24 +558,6 @@
 			}
 		}
 
-		@keyframes toggle-active-carousel-control-left-xs {
-			0%{
-				bottom: 0;
-				right: -45px;
-				width: 25%;
-			}
-
-			74% {
-				width: 50%;
-				left: 105%;
-			}
-
-			90% {
-				width: 60%;
-				left:50%;
-				top:30px;
-			}
-		}
 
 		@keyframes toggle-active-carousel-control-right {
 			0%{
@@ -595,7 +569,6 @@
 				width: 50%;
 				right: 105%;
 			}
-
 
 			90% {
 				width: 60%;
@@ -853,7 +826,6 @@
     				        	Recommendation Engine
     			        	</a>
     			        	<span class="animation-carousel-active-highlight-left"></span>
-    			        	<span class="animation-carousel-active-highlight-left-xs"></span>
     			        </label>
     			        <hr class="carousel-menu-hr">
 				    </div>
