@@ -41,7 +41,7 @@
 		h2 {
 			font-size: 24px;
 			line-height: 30px;
-			padding: 0 8px;
+			padding: 0 15px;
 		}
 		em {
 			font-style: italic;
@@ -70,18 +70,21 @@
 			position: relative;
 			right: 9px; /* To compensate for double-window icon on anchor element */
 		}
+		.no-margin-bottom {
+			margin-bottom: 0;
+		}
 		.font-shamrock-green {
 			color: #009e60;
 		}
 		.paragraph-summary {
 			font-size: 24px;
-			line-height: 30px
+			line-height: 30px;
+			padding: 0;
 		}
 		.background-image-square {
 			background-image: url(http://johnjordan.design/img/background_body.png);
 			background-repeat: repeat;
 			background-attachment: fixed;
-
 		}
 		nav {
 			z-index: 3;
@@ -138,10 +141,9 @@
 			left: -4px;
 		}
 		.img-responsive {
-			display: block;
+			/*display: block;*/ /* As want to be be able to text-align images */
 			max-width: 100%;
 			height: auto;
-			margin-bottom: 30px;
 		}
 		.main-container {
 		 min-height: 100vh; /* will cover the 100% of viewport */
@@ -165,8 +167,18 @@
 			height: 100%;
 			background-color: white;
 		}
-		header, section, figcaption, footer {
+		section img {
+			max-height: 270px;
+		}
+		section figcaption, section p, footer {
 			padding: 0 15px;
+		}
+		section figcaption {
+			padding-top: 15px;
+		}
+		figcaption h2, figcaption p {
+			padding: 0;
+			margin-top: 0;
 		}
 
 		header h1 {
@@ -188,14 +200,11 @@
 			border: 3px solid #00623a;
 			border-width: 3px 0;
 		}
-
 		figure {
 			margin: 0 0 30px;
+			padding: 30px 0px 0;
 		}
 
-		figure h2 {
-			padding: 30px 0 0;
-		}
 		.project-cover-image-wrapper img {
 			margin-bottom: 30px;
 		}
@@ -240,12 +249,11 @@
 			line-height: 30px;
 			margin: 0 0 30px;
 		}
-		ol {
-			list-style-type: disc;
+		ul {
+			list-style-type: square;
 		}
 
-
-		ol > li:before {
+		ul > li:before {
 			font-weight: 700;
 		}
 		.indented-by-16px {
@@ -345,22 +353,26 @@
 			    z-index: 0;
 			}
 			.hang-img-left {
-				top: 60px;
-				right: 50%;
+				/*top: 60px;
+				right: 50%;*/
+			}
+			.hang-img-right {
+				/*top: 60px;
+				left: 50%;*/
 			}
 		}
 		@media only screen and (min-width: 768px) {
 
 			.hang-img-left, .hang-img-right  {
-				position: relative;
-				top: 30px;
-				z-index: 0;
+				/*position: relative;
+				top: 0;
+				z-index: 0;*/
 			}
 			.hang-img-left {
-				right: 15%;
+				/*right: 15%;*/
 			}
 			.hang-img-right {
-				left: 15%;
+				/*left: 15%;*/
 			}
 		}
 
@@ -392,7 +404,6 @@
 <body class="background-image-square">
 	<span class="test-global-top"></span>
 	<span class="test-opp-global-bottom"></span>
-
 	<figure class="project-cover-image-wrapper hide-xs">
 		<img class="project-cover-image" src="http://johnjordan.design/img/whatsapp-live-location/cover-image-large.png" alt="Image of three stages of Live Location project: sketches, wireframes and hi-fi mockups">
 		<figcaption class="project-cover-image-caption position-relative">
@@ -405,8 +416,6 @@
 			</header>
 		</figcaption>
 	</figure>
-
-
 	<div class="main-container">
 		<nav>
 			<ul class="navigation-links">
@@ -432,7 +441,7 @@
 					<strong>SUMMARY:</strong> In February 2017, as part of my BSc. in Digital Design, I created a prototype for a new interface feature, which allowed the “user to complete a specific goal.”
 				</p>
 				<p class="paragraph-summary">
-					Pairing up with a product designer, I first proposed the "live location" feature for WhatsApp, then took ownership of the wireframe prototyping and user testing.
+					Pairing up with a product designer, I first proposed the “live location” feature for WhatsApp, then took ownership of the wireframe prototyping and user testing.
 				</p>
 				<p class="paragraph-summary">
 					Later, my colleague created a high-fidelity prototype based on the results of my earlier user testing.
@@ -445,9 +454,9 @@
 				</p>
 			</section>
 			<section>
-				<header class="text-right full-width">
+				<header class="text-left full-width">
 					<figure >
-						<img class="hang-img-left img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/map-pin-taskflow.png" alt="">
+						<img class="img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/map-pin-taskflow.png" alt="">
 						<figcaption>
 							<h2 >First steps</h2>
 							<p class="font-shamrock-green">
@@ -458,21 +467,16 @@
 
 						</figcaption>
 					</figure>
-
 				</header>
 				<p>
-					When proposing new product features, I’ve always found it easier to start with <em>problems</em> that need solving, and work <em> backwards</em> to a feature that would solve them.
+					When proposing new product features, I’ve always found it easier to start with <em>problems</em> that need solving, and work <em>backwards</em> to a feature that would solve them.
 				</p>
-				<p>
-					I’d used the static location-sharing feature of WhatsApp, but found it inconvenient that you had to stay where you are were – or remember to update your location if you moved. Being able to share your <strong>live location</strong> would avoid these two issues.
+				<p class="no-margin-bottom">
+					I’d used the static location-sharing feature of WhatsApp, but found it inconvenient that you had to stay put, or else remember to update your location if you moved. Being able to share your <strong>live location</strong> would avoid these two issues.
 				</p>
-				<p>
-					My colleague agreed it was a useful feature, so we decided to begin work: I would be taking care of the initial prototyping and all the user testing, with my colleague preparing the high-fidelity visual prototypes.
-				</p>
-
 			</section>
 			<section>
-				<header class"text-left full-width">
+				<header class="text-right full-width">
 					<figure>
 						<img class="hang-img-right img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/initial-sketches.jpg" alt="">
 						<figcaption>
@@ -485,10 +489,23 @@
 						</figcaption>
 					</figure>
 				</header>
-				<p>After deciding on an initial set of user tasks, I sketched out a few interface layouts, and prepared initial task flows for each user task, which I then used to structure the initial wireframe prototype.</p>
+				<p class="no-margin-bottom">
+					Our first step was to generate a few different concepts for the feature, such as:
+					<ul>
+						<li>
+							being able to request another user’s live location, as well as sending your own, without it first being requested.
+						</li>
+						<li>
+							being able to drop a pin on a map and track people as they made their way there.
+						</li>
+						<li>
+							dropping multiple pins on a map, and having a group of people vote on their favourite location.
+						</li>
+					</ul>
+				</p>
 			</section>
 			<section>
-				<header class="text-right full-width">
+				<header class="text-left full-width">
 					<figure>
 						<img class="hang-img-left img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/green-gorilla-resized.png" alt="">
 						<figcaption>
@@ -499,6 +516,7 @@
 						</figcaption>
 					</figure>
 				</header>
+				<p class="no-margin-bottom">After deciding on an initial set of user tasks, I sketched out a few interface layouts, and prepared initial task flows for each user task, which I then used to structure the initial wireframe prototype.</p>
 			</section>
 		</main>
 		<footer>
