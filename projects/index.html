@@ -47,7 +47,7 @@
 		em {
 			font-style: italic;
 		}
-		.hidden-xs {
+		.visible-xs {
 			display: none !important;
 		}
 		.font-light-purple {
@@ -62,7 +62,7 @@
 		.no-margin-bottom {
 			margin-bottom: 0;
 		}
-		.margin-top-15px {
+		.margin-top-15px-xs {
 			margin-top: 15px !important;
 		}
 		.background-image-square {
@@ -137,6 +137,9 @@
 			width: 100%;
 			position: absolute;
 			top:15px;
+		}
+		.carousel-menu-hr {
+			top: 45px;
 		}
 
 		main, header, section {
@@ -405,8 +408,7 @@
 		}
 
 		.carousel-menu-spacer {
-			display: inline-block;
-			width: 30px;
+			display: none;
 		}
 
 		.carousel-inner {
@@ -457,6 +459,7 @@
 		}
 
 		.carousel-control-active {
+			display: block;
 			font-weight: bold;
 			position: relative;
 			z-index: 1; /* To appear above animated highlighting */
@@ -470,8 +473,8 @@
 		.animation-carousel-active-highlight-left, .animation-carousel-active-highlight-right {
 			display: inline-block;
 			width: 15px;
-			height: 40px;
-			position:absolute;
+			height: 15px;
+			position: absolute;
 			top: -5px;
 			z-index: 0;
 			background-color: #80cfb0;
@@ -479,7 +482,7 @@
 		}
 
 		.animation-carousel-active-highlight-right {
-			right: -45px;
+			right: -15000px;
 			-webkit-animation: toggle-active-carousel-control-right 1 0.73s ease-in-out;
 			-o-animation: toggle-active-carousel-control-right 1 0.73s ease-in-out;
 			animation: toggle-active-carousel-control-right 1 0.73s ease-in-out;
@@ -545,12 +548,12 @@
 
 			74% {
 				width: 50%;
-				left: 100%;
+				left: 105%;
 			}
 
 			90% {
 				width: 60%;
-				left:0;
+				left:50%;
 			}
 		}
 
@@ -562,13 +565,13 @@
 
 			74% {
 				width: 50%;
-				right: 100%;
+				right: 105%;
 			}
 
 
 			90% {
 				width: 60%;
-				right:0;
+				right:50%;
 			}
 		}
 
@@ -642,8 +645,11 @@
 
 		}
 		@media only screen and (min-width: 500px) {
-			.hidden-xs {
+			.visible-xs {
 				display: inline-block;
+			}
+			.margin-top-15px-xs {
+				margin-top: 0 !important;
 			}
 			section.carousel-container {
 				position: static;
@@ -653,6 +659,16 @@
 			.carousel {
 		    	overflow: hidden;
 
+			}
+			.carousel-control-active {
+				display: inline-block;
+			}
+			.carousel-menu-hr {
+				top: 15px;
+			}
+			.carousel-menu-spacer {
+				display: inline-block;
+				width: 30px;
 			}
 			.project-card {
 				margin: 0 15px 30px;
@@ -797,15 +813,15 @@
 				        	Recommendation Engine
 				        	<span class="animation-carousel-active-highlight-right"></span>
 				        </label>
-
     			        <label for="carousel-2" class="carousel-control next control-1">
     			        	WhatsApp Live Location
             	        	<span class="carousel-menu-spacer">&nbsp;</span>
-    			        	<a href="#carousel-2" class="dummy-link carousel-control-active margin-top-15px">
+    			        	<a href="#carousel-2" class="dummy-link carousel-control-active margin-top-15px-xs">
     				        	Recommendation Engine
     			        	</a>
     			        	<span class="animation-carousel-active-highlight-left"></span>
     			        </label>
+    			        <hr class="carousel-menu-hr">
 				    </div>
 				</div>
 			</section>
