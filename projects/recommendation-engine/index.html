@@ -208,6 +208,7 @@
 			max-width: 100%;
 			max-height: 270px;
 			padding: 0 15px;
+			margin-bottom: 15px;
 		}
 
 		section header figure {
@@ -220,9 +221,7 @@
 		section ul li {
 			margin-bottom: 15px;
 		}
-		section figcaption {
-			padding-top: 15px;
-		}
+
 		figcaption p {
 			padding: 0;
 			margin-top: 0;
@@ -402,28 +401,7 @@
 			    top: 300px;
 			    z-index: 0;
 			}
-			.hang-img-left {
-				/*top: 60px;
-				right: 50%;*/
-			}
-			.hang-img-right {
-				/*top: 60px;
-				left: 50%;*/
-			}
-		}
-		@media only screen and (min-width: 768px) {
 
-			.hang-img-left, .hang-img-right  {
-				/*position: relative;
-				top: 0;
-				z-index: 0;*/
-			}
-			.hang-img-left {
-				/*right: 15%;*/
-			}
-			.hang-img-right {
-				/*left: 15%;*/
-			}
 		}
 
 		@media only screen and (min-width: 500px) {
@@ -484,7 +462,7 @@
 						<span class="test-opp"></span>
 					</header>
 				</figcaption>
-				<img class="project-cover-image" src="img/nutriflex-matcher-cover-image.png" alt="Image of the Recommendation Engine running on an iPad.">
+				<img class="project-cover-image img-responsive" src="img/nutriflex-matcher-cover-image.png" alt="Image of the Recommendation Engine running on an iPad.">
 			</figure>
 			<section class="summary">
 				<p class="paragraph-summary">
@@ -525,7 +503,7 @@
 			<section>
 				<header class="full-width">
 					<figure>
-						<img class="hang-img-right img-responsive" src="img/nutriflex-omega-lipid-handy-chart.png" alt="A handy chart, which is a 17 row x 9 column table of products and their ingredients">
+						<img class=" img-responsive" src="img/nutriflex-omega-lipid-handy-chart.png" alt="A handy chart, which is a 17 row x 9 column table of products and their ingredients">
 						<figcaption class="text-right">
 							<h2>Initial Steps</h2>
 							<p class="font-shamrock-green">
@@ -549,7 +527,7 @@
 			<section>
 				<header class="full-width">
 					<figure>
-						<img class="hang-img-left img-responsive" src="img/second-prototype.png" alt="Image of prototype application running on a iPad">
+						<img class="img-responsive" src="img/second-prototype.png" alt="Image of prototype application running on a iPad">
 						<figcaption class="text-left">
 							<h2>Task-Centered Design</h2>
 							<p class="font-shamrock-green">
@@ -571,79 +549,50 @@
 			<section>
 				<header class="full-width">
 					<figure>
-						<img src="http://johnjordan.design/img/whatsapp-live-location/wireframe-prototype.png" alt="">
+						<img class="img-responsive" src="img/codebase.png" alt="Image of some dummy code.">
 						<figcaption class="text-right">
-							<h2>Design Handover</h2>
+							<h2>Refactoring and Unit Testing</h2>
 							<p class="font-shamrock-green">
-								<em>Creating the hi-fi prototype...</em>
+								<em>Getting the codebase in order...</em>
 							</p>
 						</figcaption>
 					</figure>
 				</header>
 				<p>
-					Throughout the user testing, we made a number of key design decisions:
-					<ul>
-						<li>
-							<strong>Placement of the feature under the vertical ellipsis</strong>, rather than under the paper-clip like the pre-existing <em>static</em> location sharing. <em>None</em> of the users were aware that WhatsApp allowed them to share their <em>static</em> location, presumably for this reason.
-						</li>
-						<li>
-							<strong>Dropping the map pin feature</strong>, since most users made at least one error using it, causing a lot of frustration in some cases.
-						</li>
-						<li>
-							<strong>Making the feature feel “safe”</strong>, since all participants expressed various concerns regarding security when sharing their live location. We added the following:
-							<ul>
-								<li class="margin-top-15px">a highly visible “Stop Now” button</li>
-								<li>clear indication that user broadcasting their location</li>
-								<li>automatic stop when user closes WhatsApp, and</li>
-								<li>an automatic time-out feature.</li>
-							</ul>
-						</li>
-					</ul>
+					Responding to user feedback is the <em>aim</em> of user testing, but rapidly iterating my prototype left me with a codebase that was in need of a serious <em>refactor</em>: that is, changing its structure, without affecting its pre-existing functionality.
 				</p>
 				<p class="no-margin-bottom">
-					After documenting our decisions, I handed over to my colleague, who would be creating a high-fidelity prototype using <strong>Invision</strong>. In the meantime, I prepared another round of user tests to validate our earlier design decisions.
+					Given the number of comparisons I was making, and my need to refactor safely, I used <strong>automated testing</strong> throughout this project: I used <strong>Jasmine</strong>, the JavaScript testing framework, along with the <strong>ngMock module of AngularJS</strong>, which facilitates unit-testing of AngularJS applications, to ensure the correct answers were being returned from the application.
 				</p>
 			</section>
 			<section>
 				<header class="full-width">
 					<figure>
-						<img src="img/high-fi-prototype.jpg" alt="">
+						<img class="img-responsive" src="img/app-pie-chart.png" alt="">
+						<img class="img-responsive" src="img/app-bar-chart.png" alt="">
 						<figcaption class="text-left">
-							<h2>Validating the Final Design</h2>
+							<h2>Visualising the data</h2>
 							<p class="font-shamrock-green">
-								<em>Putting the hi-fi prototype to the test...</em>
+								<em>Adding in Chart.js...</em>
 							</p>
 						</figcaption>
 					</figure>
 				</header>
 				<p>
-					The purpose of this round of testing, was to validate the crucial design hypotheses we had formed after the initial user tests.
+					Towards the end of the project, the sales staff felt that having the results displayed as a <strong>chart</strong>, as well as in tabular form, would assist them in customer pitches.
 				</p>
 				<p>
-					In a major departure from the wireframe prototype, we placed the <em>live</em> location feature back under the paper clip icon (where the <em>static</em> location feature was), rather than under the vertical ellipsis. Since this placement had resulted in poor discoverability previously, we decided to use a <strong>tooltip</strong> to advise users of this new feature.
+					Initially, they wanted a variety of charts, including a scatter and bubble chart. Given the information they were presenting, I knew that some of these charts would be meaningless, and advised them on the appropriate choices for the information returned from the application.
 				</p>
-				<p>
-					This round of user testing was about validating our design assumptions, rather than gathering user feedback, so our metrics were <em>quantitative</em> in nature, e.g. 100% of users could stop the <em>live</em> location feature within five seconds etc.
-				</p>
-				<p>
-					These user tests quickly showed that:
-					<ul>
-						<li class="margin-top-15px">
-							There was definite user interest in the “Live Location” feature, with all thirteen participants stating they would use this feature.
-						</li>
-						<li>
-							While having the “Live Location” feature under the vertical ellipsis menu made more conceptual sense for users, they quickly discovered the feature when we implemented a <strong>tooltip</strong>, and accepted the feature’s placement under the paper clip icon.
-						</li>
-						<li>
-							Users were generally unconcerned with potential privacy issues with this feature, provided appropriate feedback and control of the feature were provided, e.g. highly visible <strong>stop button</strong>.
-						</li>
-					</ul>
+				<p class="no-margin-bottom">
+					I implemented a <em>pie</em> and <em>bar</em> chart feature using the Chart.js library, creating <em>interactive</em> <strong>HTML5-based Javascript charts</strong>, which displayed responsively across various device sizes.
 				</p>
 			</section>
 			<section>
 				<header class="full-width">
 					<figure>
-						<img src="img/dsa-interview.png" alt="">
+						<img class="img-responsive" src="img/final-app-phone.png" alt="">
+						<img class="img-responsive" src="img/final-app-ipad.png" alt="">
 						<figcaption class="text-right">
 							<h2>Conclusion</h2>
 							<p class="font-shamrock-green">
@@ -653,20 +602,17 @@
 					</figure>
 				</header>
 				<p>
-					This was a very well-executed project, and I really enjoyed the guerilla-style usability testing that formed the core of it. It is fascinating how differently people interpret the same user interface, and this project provided plenty of divergent interpretations.
+					On handover, the B. Braun team were very impressed with the application, praising its <strong>ease-of-use</strong> and <strong>professional appearance</strong>, as well as its responsive behaviour across mobile, tablet and desktop devices.
 				</p>
 				<p>
-					Six months after we submitted our assignment, WhatsApp launched an actual <em>live</em> location feature in <a href="https://blog.whatsapp.com/10000634/Share-your-live-location" target="_blank">October 2017<span class="icon-wrapper"><i class="fas fa-external-link-alt"></i></span></a><span class="shift-left-9px">.</span> This gave us a chance to compare and contrast our respective implementations of the feature: there was very little difference between the two designs!
+					This was an ideal project for me to work on, since it involved the design and development of a web application from conception, all the way through to fully-functional product. It also delivered a lot of value to B. Braun, since it saved their sales staff the hours of drudgery every month of manually matching patients to TPN products.
 				</p>
 				<p>
-					Based on the strength of our work, I was interviewed by the university about the project, which you can read about <a href="../projects/digital-skills-academy-interview/" target="_blank">here<span class="icon-wrapper"><i class="fas fa-external-link-alt"></i></span></a><span class="shift-left-9px">.</span>
-				</p>
-				<p>
-					<blockquote cite="https://webcache.googleusercontent.com/search?q=cache:0siE-jOYb_8J:https://digitalskillsacademy.com/blog/digital-skills-academy-participants-pioneer-a-new-whatsapp-feature+&amp;cd=1&amp;hl=en&amp;ct=clnk&amp;gl=us">
-						In their design journey, they identified real UI issues when testing with users and solved these in ways that were almost identical to how WhatsApp actually implemented live location sharing. This clearly proved they understood the concepts we taught them. They created excellent work. <span class="blockquote-quotation-mark">”</span>
+					<blockquote cite="private correspondence">
+						The B. Braun Nutriflex tool development project was a complete success... John was extremely professional as he understood the project concept from the beginning and he created a tool that had all the specifications we asked and more, with a great user interface. This tool will boost sales force productivity and enable them to standardise the prescribing of Parenteral Nutrition for our customers in a timely manner...<span class="blockquote-quotation-mark">”</span>
 						<div class="margin-top-15px blockquote-attribution">
-							<strong>— Peter Berends</strong><br/>
-							<span class="font-shamrock-green">User Experience Analyst and Lecturer</span>
+							<strong>— Simba Mavhunga MPharm, MSc Clinical Pharm Prac</strong><br/>
+							<span class="font-shamrock-green">Associate Product Manager (B. Braun)</span>
 						</div>
 					</blockquote>
 				</p>
