@@ -175,6 +175,10 @@
 			max-width: 100%;
 			max-height: 270px;
 		}
+
+		section header figure {
+			text-align: center;
+		}
 		section figcaption, section p, section ul li, footer {
 			padding: 0 15px;
 		}
@@ -461,7 +465,7 @@
 			</section>
 			<section>
 				<header class="full-width">
-					<figure class="text-right">
+					<figure>
 						<img class="img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/map-pin-taskflow.png" alt="">
 						<figcaption class="text-left">
 							<h2 >First steps</h2>
@@ -486,7 +490,7 @@
 			</section>
 			<section>
 				<header class="full-width">
-					<figure class="text-left">
+					<figure>
 						<img class="hang-img-right img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/initial-sketches.jpg" alt="">
 						<figcaption class="text-right">
 							<h2>Generating initial concepts</h2>
@@ -521,7 +525,7 @@
 			</section>
 			<section>
 				<header class="full-width">
-					<figure class="text-right">
+					<figure>
 						<img class="hang-img-left img-responsive" src="img/green-gorilla.png" alt="An image of a gorilla, since it rhymes with guerilla">
 						<figcaption class="text-left">
 							<h2>Guerilla Usability Testing</h2>
@@ -543,7 +547,7 @@
 			</section>
 			<section>
 				<header class="full-width">
-					<figure class="text-left">
+					<figure>
 						<img src="http://johnjordan.design/img/whatsapp-live-location/wireframe-prototype.png" alt="">
 						<figcaption class="text-right">
 							<h2>Design Handover</h2>
@@ -555,24 +559,26 @@
 				</header>
 				<p>
 					Throughout the user testing, we made a number of key design decisions:
-
 					<ul>
 						<li>
-							Placement of the feature under the vertical ellipsis, rather than under the paper-clip like the pre-existing <em>static</em> location sharing. Interestingly, none of the users were aware that WhatsApp allowed them to share their <em>static</em> location, presumably for this reason.
+							<strong>Placement of the feature under the vertical ellipsis</strong>, rather than under the paper-clip like the pre-existing <em>static</em> location sharing. <em>None</em> of the users were aware that WhatsApp allowed them to share their <em>static</em> location, presumably for this reason.
 						</li>
 						<li>
-							Dropping the map pin feature, since most users made at least one error using it, causing a lot of frustration in some cases.
+							<strong>Dropping the map pin feature</strong>, since most users made at least one error using it, causing a lot of frustration in some cases.
 						</li>
 						<li>
-							Making the feature feel “safe”, since all participants expressed various concerns regarding security when sharing their live location. We added the following:
+							<strong>Making the feature feel “safe”</strong>, since all participants expressed various concerns regarding security when sharing their live location. We added the following:
 							<ul>
-								<li class="margin-top:15px">a highly visible “Stop Now” button</li>
+								<li class="margin-top-15px">a highly visible “Stop Now” button</li>
 								<li>clear indication that user broadcasting their location</li>
-								<li>automatic stop when user closes the application, and</li>
+								<li>automatic stop when user closes WhatsApp, and</li>
 								<li>an automatic time-out feature.</li>
 							</ul>
 						</li>
 					</ul>
+				</p>
+				<p>
+					After documenting our decisions, I handed over to my colleague, who would be creating a high-fidelity prototype using <strong>Invision</strong>. In the meantime, I prepared another round of user tests to validate our earlier design decisions.
 				</p>
 			</section>
 		</main>
