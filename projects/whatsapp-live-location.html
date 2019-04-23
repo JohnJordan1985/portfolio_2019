@@ -36,7 +36,7 @@
 			margin-top: 0;
 			font-size: 36px ;
 			line-height: 48px;
-			padding: 8px 16px;
+			padding: 15px 30px;
 		}
 		h2 {
 			font-size: 24px;
@@ -69,6 +69,9 @@
 		.shift-left-9px {
 			position: relative;
 			right: 9px; /* To compensate for double-window icon on anchor element */
+		}
+		.margin-top-15px {
+			margin-top: 15px;
 		}
 		.no-margin-bottom {
 			margin-bottom: 0;
@@ -168,10 +171,16 @@
 			background-color: white;
 		}
 		section img {
+			height: auto;
+			max-width: 100%;
 			max-height: 270px;
 		}
 		section figcaption, section p, section ul li, footer {
 			padding: 0 15px;
+		}
+
+		section ul li {
+			margin-bottom: 15px;
 		}
 		section figcaption {
 			padding-top: 15px;
@@ -276,18 +285,14 @@
 			-o-animation: example 1 2s ease-in-out;
 			animation: example 1 2s ease-in-out;
 		}
-
 		span.test {
-			top: -22.5px;
-			left: -22.5px; /* on account of padding horizontal of 15px */
+			top: -10px;
+			left: -15px; /* on account of padding horizontal of 15px */
 		}
-
 		span.test-opp {
-			bottom: -22.5px; /* on account of margin-bottom of 60px on h1 */
-			right: -22.5px;
-
+			bottom: -10px; /* on account of margin-bottom of 60px on h1 */
+			right: -15px;
 		}
-
 		span.test-global-top, span.test-opp-global-bottom {
 			z-index: 3;
 		}
@@ -455,10 +460,10 @@
 				</p>
 			</section>
 			<section>
-				<header class="text-left full-width">
-					<figure >
+				<header class="full-width">
+					<figure class="text-right">
 						<img class="img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/map-pin-taskflow.png" alt="">
-						<figcaption>
+						<figcaption class="text-left">
 							<h2 >First steps</h2>
 							<p class="font-shamrock-green">
 								<em>
@@ -480,10 +485,10 @@
 				</p>
 			</section>
 			<section>
-				<header class="text-right full-width">
-					<figure>
+				<header class="full-width">
+					<figure class="text-left">
 						<img class="hang-img-right img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/initial-sketches.jpg" alt="">
-						<figcaption>
+						<figcaption class="text-right">
 							<h2>Generating initial concepts</h2>
 							<p class="font-shamrock-green">
 								<em>
@@ -515,10 +520,10 @@
 				</p>
 			</section>
 			<section>
-				<header class="text-left full-width">
-					<figure>
-						<img class="hang-img-left img-responsive" src="http://johnjordan.design/img/whatsapp-live-location/green-gorilla-resized.png" alt="">
-						<figcaption>
+				<header class="full-width">
+					<figure class="text-right">
+						<img class="hang-img-left img-responsive" src="img/green-gorilla.png" alt="An image of a gorilla, since it rhymes with guerilla">
+						<figcaption class="text-left">
 							<h2>Guerilla Usability Testing</h2>
 							<p class="font-shamrock-green">
 								<em>Test early, test often...</em>
@@ -526,6 +531,49 @@
 						</figcaption>
 					</figure>
 				</header>
+				<p>
+					I built the wireframe prototype using the wonderful <strong>Balsamiq</strong>, and wrote a user-testing process with an introductory script to provide context, a task list and various questions for the users.
+				</p>
+				<p>
+					Then, I set about user testing my designs <em>guerilla</em>-style: that is, informally recruiting people in public places, putting my prototype in front of them, and quickly gathering their feedback as they completed short tasks.
+				</p>
+				<p class="no-margin-bottom">
+					After each test, participants were asked a series of open-ended questions to explore their perceptions and concerns regarding the “Live Location” feature. I then iterated on my prototype, with each design decision validated with user data.
+				</p>
+			</section>
+			<section>
+				<header class="full-width">
+					<figure class="text-left">
+						<img src="http://johnjordan.design/img/whatsapp-live-location/wireframe-prototype.png" alt="">
+						<figcaption class="text-right">
+							<h2>Design Handover</h2>
+							<p class="font-shamrock-green">
+								<em>Creating the hi-fi prototype</em>
+							</p>
+						</figcaption>
+					</figure>
+				</header>
+				<p>
+					Throughout the user testing, we made a number of key design decisions:
+
+					<ul>
+						<li>
+							Placement of the feature under the vertical ellipsis, rather than under the paper-clip like the pre-existing <em>static</em> location sharing. Interestingly, none of the users were aware that WhatsApp allowed them to share their <em>static</em> location, presumably for this reason.
+						</li>
+						<li>
+							Dropping the map pin feature, since most users made at least one error using it, causing a lot of frustration in some cases.
+						</li>
+						<li>
+							Making the feature feel “safe”, since all participants expressed various concerns regarding security when sharing their live location. We added the following:
+							<ul>
+								<li class="margin-top:15px">a highly visible “Stop Now” button</li>
+								<li>clear indication that user broadcasting their location</li>
+								<li>automatic stop when user closes the application, and</li>
+								<li>an automatic time-out feature.</li>
+							</ul>
+						</li>
+					</ul>
+				</p>
 			</section>
 		</main>
 		<footer>
