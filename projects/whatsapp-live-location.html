@@ -170,7 +170,7 @@
 		section img {
 			max-height: 270px;
 		}
-		section figcaption, section p, footer {
+		section figcaption, section p, section ul li, footer {
 			padding: 0 15px;
 		}
 		section figcaption {
@@ -265,10 +265,11 @@
 		}
 
 		span.test, span.test-opp, .test-global-top, .test-opp-global-bottom  {
-			position: absolute;
 			display: inline-block;
 			width: 40px;
 			height: 40px;
+			position: absolute;
+			z-index: 3;
 			max-width: 100%; /* Avoids overfilling parent container when animation start */
 			background: #00623a;
 			-webkit-animation: example 1 2s ease-in-out;
@@ -277,13 +278,13 @@
 		}
 
 		span.test {
-			top: -10px;
-			left: -15px; /* on account of padding horizontal of 15px */
+			top: -22.5px;
+			left: -22.5px; /* on account of padding horizontal of 15px */
 		}
 
 		span.test-opp {
-			bottom: -10px; /* on account of margin-bottom of 60px on h1 */
-			right: -15px;
+			bottom: -22.5px; /* on account of margin-bottom of 60px on h1 */
+			right: -22.5px;
 
 		}
 
@@ -471,8 +472,11 @@
 				<p>
 					When proposing new product features, I’ve always found it easier to start with <em>problems</em> that need solving, and work <em>backwards</em> to a feature that would solve them.
 				</p>
-				<p class="no-margin-bottom">
+				<p>
 					I’d used the static location-sharing feature of WhatsApp, but found it inconvenient that you had to stay put, or else remember to update your location if you moved. Being able to share your <strong>live location</strong> would avoid these two issues.
+				</p>
+				<p class="no-margin-bottom">
+					My colleague agreed with my suggestion, and we planned out the project. First, I would create a wireframe prototype, informed by frequent user tests. Then, my colleague would create a high-fidelity prototype, based on my specifications. Finally, I would user test the high-fidelity prototype to validate our design decisions.
 				</p>
 			</section>
 			<section>
@@ -489,19 +493,25 @@
 						</figcaption>
 					</figure>
 				</header>
-				<p class="no-margin-bottom">
-					Our first step was to generate a few different concepts for the feature, such as:
+				<p>
+					After planning out the project, our first step was to generate a few different concepts for the feature, such as:
 					<ul>
 						<li>
-							being able to request another user’s live location, as well as sending your own, without it first being requested.
+							Requesting another user’s live location.
 						</li>
 						<li>
-							being able to drop a pin on a map and track people as they made their way there.
+							Sending your own location, <em>without</em> it being requested.
 						</li>
 						<li>
-							dropping multiple pins on a map, and having a group of people vote on their favourite location.
+							Dropping a map pin, and track people as they made their way there.
+						</li>
+						<li>
+							Dropping multiple pins on a map, and having a group of people vote on their favourite location.
 						</li>
 					</ul>
+				</p>
+				<p class="no-margin-bottom">
+					Having decided on what functionality we would be prototyping, I sketched out a few interface layouts, and prepared initial task flows, which I used to structure the initial wireframe prototype.
 				</p>
 			</section>
 			<section>
@@ -516,7 +526,6 @@
 						</figcaption>
 					</figure>
 				</header>
-				<p class="no-margin-bottom">After deciding on an initial set of user tasks, I sketched out a few interface layouts, and prepared initial task flows for each user task, which I then used to structure the initial wireframe prototype.</p>
 			</section>
 		</main>
 		<footer>
