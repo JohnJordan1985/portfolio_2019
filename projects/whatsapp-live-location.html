@@ -76,6 +76,13 @@
 		.no-margin-bottom {
 			margin-bottom: 0;
 		}
+		.indented-by-16px {
+			padding-left: 32px;
+		}
+
+		.position-relative {
+			position: relative;
+		}
 		.font-shamrock-green {
 			color: #009e60;
 		}
@@ -170,6 +177,30 @@
 			height: 100%;
 			background-color: white;
 		}
+		section {
+			width: 100%;
+		}
+		section > header {
+			margin-bottom: 0;
+		}
+		section.summary {
+			padding: 30px 30px 0;
+			background-color: #ecfff8;
+			border: 3px solid #00623a;
+			border-width: 3px 0;
+		}
+		section::after {
+			display: block;
+			margin-top: 30px;
+			font-size: 21px;
+			line-height: 30px;
+			font-weight: bold;
+			text-align: center;
+			content: "\2042"; /* Asterism */
+		}
+		section:last-child::after, section.summary::after {
+			display: none;
+		}
 		section img {
 			height: auto;
 			max-width: 100%;
@@ -205,18 +236,30 @@
 			margin: 0;
 			max-width: 700px;
 		}
-		section {
-			width: 100%;
+		p, ul, ol, blockquote {
+			font-size: 21px;
+			line-height: 30px;
+			margin: 0 0 30px;
 		}
-		section > header {
-			margin-bottom: 0;
+		ul {
+			list-style-type: square;
 		}
-		section.summary {
-			padding: 30px 30px 0;
-			background-color: #ecfff8;
-			border: 3px solid #00623a;
-			border-width: 3px 0;
+
+		ul > li:before {
+			font-weight: 700;
 		}
+		blockquote {
+			font-style: italic;
+			margin-left: 15px;
+			padding: 15px 30px 15px 15px;
+			background-color: #ECFFF8;
+			border-left: 5px solid #00492C;
+		}
+		blockquote .blockquote-attribution {
+			font-style: normal;
+		}
+
+
 		figure {
 			margin: 0 0 30px;
 			padding: 30px 0px 0;
@@ -259,26 +302,6 @@
 
 		.social-icons:hover, .social-icons:active, .social-icons:visited {
 			color: #80CFB0;
-		}
-
-		p, ul, ol {
-			font-size: 21px;
-			line-height: 30px;
-			margin: 0 0 30px;
-		}
-		ul {
-			list-style-type: square;
-		}
-
-		ul > li:before {
-			font-weight: 700;
-		}
-		.indented-by-16px {
-			padding-left: 32px;
-		}
-
-		.position-relative {
-			position: relative;
 		}
 
 		span.test, span.test-opp, .test-global-top, .test-opp-global-bottom  {
@@ -604,7 +627,7 @@
 					In a major departure from the wireframe prototype, we placed the <em>live</em> location feature back under the paper clip icon (where the <em>static</em> location feature was), rather than under the vertical ellipsis. Since this placement had resulted in poor discoverability previously, we decided to use a <strong>tooltip</strong> to advise users of this new feature.
 				</p>
 				<p>
-					This round of user testing was about validating our design assumptions, rather than gathering user feedback, so our metrics were quantitative in nature, e.g. 100% of users could stop the <em>live</em> location feature within five seconds etc.
+					This round of user testing was about validating our design assumptions, rather than gathering user feedback, so our metrics were <em>quantitative</em> in nature, e.g. 100% of users could stop the <em>live</em> location feature within five seconds etc.
 				</p>
 				<p>
 					These user tests quickly showed that:
@@ -633,6 +656,24 @@
 						</figcaption>
 					</figure>
 				</header>
+				<p>
+					This was a very well-executed project, and I really enjoyed the guerilla-style usability testing that formed the core of it. It is fascinating how differently people interpret the same user interface, and this project provided plenty of divergent interpretations.
+				</p>
+				<p>
+					Six months after we submitted our assignment, WhatsApp launched an actual <em>live</em> location feature in <a href="https://blog.whatsapp.com/10000634/Share-your-live-location" target="_blank">October 2017<span class="icon-wrapper"><i class="fas fa-external-link-alt"></i></span></a><span class="shift-left-9px">.</span> This gave us a chance to compare and contrast our respective implementations of the feature: there was very little difference between the two designs!
+				</p>
+				<p>
+					Based on the strength of our work, I was interviewed by the university about the project, which you can read about <a href="../projects/digital-skills-academy-interview/" target="_blank">here<span class="icon-wrapper"><i class="fas fa-external-link-alt"></i></span></a><span class="shift-left-9px">.</span>
+				</p>
+				<p>
+					<blockquote cite="https://webcache.googleusercontent.com/search?q=cache:0siE-jOYb_8J:https://digitalskillsacademy.com/blog/digital-skills-academy-participants-pioneer-a-new-whatsapp-feature+&amp;cd=1&amp;hl=en&amp;ct=clnk&amp;gl=us">
+						In their design journey, they identified real UI issues when testing with users and solved these in ways that were almost identical to how WhatsApp actually implemented live location sharing. This clearly proved they understood the concepts we taught them. They created excellent work.
+						<div class="margin-top-15px blockquote-attribution">
+							<strong>— Peter Berends</strong><br/>
+							<span class="font-shamrock-green">User Experience Analyst and Lecturer</span>
+						</div>
+					</blockquote>
+				</p>
 			</section>
 		</main>
 		<footer>
