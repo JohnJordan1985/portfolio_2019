@@ -196,7 +196,8 @@
 			line-height: 30px;
 			font-weight: bold;
 			text-align: center;
-			content: "\2042"; /* Asterism */
+			color: #00623a; /* Darkest green */
+			content: "* * *"; /* Asterix while have to do, as asterism not available with IBM Plex family  */
 		}
 		section:last-child::after, section.summary::after {
 			display: none;
@@ -249,11 +250,21 @@
 			font-weight: 700;
 		}
 		blockquote {
+			position: relative;
 			font-style: italic;
 			margin-left: 15px;
 			padding: 15px 30px 15px 15px;
 			background-color: #ECFFF8;
 			border-left: 5px solid #00492C;
+		}
+		blockquote .blockquote-quotation-mark {
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-size: 60px;
+			font-style: normal;
+			font-weight: bold;
+			color: #00492C;
 		}
 		blockquote .blockquote-attribution {
 			font-style: normal;
@@ -667,7 +678,7 @@
 				</p>
 				<p>
 					<blockquote cite="https://webcache.googleusercontent.com/search?q=cache:0siE-jOYb_8J:https://digitalskillsacademy.com/blog/digital-skills-academy-participants-pioneer-a-new-whatsapp-feature+&amp;cd=1&amp;hl=en&amp;ct=clnk&amp;gl=us">
-						In their design journey, they identified real UI issues when testing with users and solved these in ways that were almost identical to how WhatsApp actually implemented live location sharing. This clearly proved they understood the concepts we taught them. They created excellent work.
+						In their design journey, they identified real UI issues when testing with users and solved these in ways that were almost identical to how WhatsApp actually implemented live location sharing. This clearly proved they understood the concepts we taught them. They created excellent work. <span class="blockquote-quotation-mark">”</span>
 						<div class="margin-top-15px blockquote-attribution">
 							<strong>— Peter Berends</strong><br/>
 							<span class="font-shamrock-green">User Experience Analyst and Lecturer</span>
