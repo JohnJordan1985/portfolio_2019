@@ -13,3 +13,11 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 # Here we actually show the page that has the .html extension
 
 RewriteRule ^(.*)$ $1.html [NC,L]
+
+# Verifies that the initial request does not already have https://
+
+RewriteCond %{HTTPS} off
+
+# And rewrites the entire requested URL if it does not
+
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
