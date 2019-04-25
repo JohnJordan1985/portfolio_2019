@@ -47,6 +47,9 @@
 		strong {
 			font-weight: bold;
 		}
+		.text-center {
+			text-align: center;
+		}
 		.font-shamrock-green {
 			color: #009e60;
 		}
@@ -103,7 +106,7 @@
 		 position: relative;
 		 padding-bottom: 155px; /* height of your footer */
 		}
-		header, section, figcaption, footer {
+		header, section, figcaption {
 			padding: 0 15px;
 		}
 		header {
@@ -117,7 +120,6 @@
 			margin: 0;
 			max-width: 700px;
 		}
-
 		main, header, section {
 			display: inline-block;
 			max-width: 790px;
@@ -152,6 +154,12 @@
 		 	bottom: 0;
 		 	width: 100%;
 		 	background-color: white;
+		}
+		.portrait-image {
+			display: inline-block;
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 30px;
 		}
 		.social-icon-wrapper {
 			display: inline-block;
@@ -276,7 +284,7 @@
 				width: 50%;
 			}
 			header
-			.img-responsive.portrait-image {
+			.portrait-image {
 				position: relative;
 			    left: -300px;
 			    top: 300px;
@@ -299,8 +307,9 @@
 		</nav>
 		<main>
 			<header>
-				<img class="img-responsive portrait-image" src="img/portrait-gradient.jpg" alt="Portrait of John Jordan with green gradient applied.">
-
+				<div class="text-center">
+					<img class="portrait-image" src="img/portrait-gradient.jpg" alt="Portrait of John Jordan with green gradient applied.">
+				</div>
 				<div class="position-relative">
 					<span class="test"></span>
 					<h1>
