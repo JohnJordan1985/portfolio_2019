@@ -92,6 +92,9 @@
 			background-attachment: fixed;
 
 		}
+		.bg-white {
+			background-color: #FFFFFF;
+		}
 		nav {
 			opacity: 0;
 			position: fixed;
@@ -272,7 +275,8 @@
 		span.test-opp {
 			bottom: -10px; /* on account of margin-bottom of 60px on h1 */
 			right: -15px;
-		}
+			z-index: -1; /* Not clipped by header if z-index higher */
+ 		}
 
 		span.test-opp-global-top-right {
 			top: 0px;
@@ -734,7 +738,7 @@
 		</nav>
 		<main>
 			<header>
-				<div class="position-relative">
+				<div class="position-relative bg-white">
 					<span class="test"></span>
 					<h1>
 						Recent projects
