@@ -2,6 +2,11 @@
 
 RewriteEngine on
 
+# creates pernament redirect from www. to non-ww, with SSl certificate
+
+RewriteCond %{HTTP_HOST} ^www.johnjordan.design [NC]
+RewriteRule ^(.*)$ https://johnjordan.design/$1 [L,R=301]
+
 # does not apply to existing directories, meaning that if the folder exists on the server then don't change anything and don't run the Rule!
 
 RewriteCond %{REQUEST_FILENAME} !-d
